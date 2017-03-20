@@ -1,9 +1,9 @@
-#ClinicalTrials.gov
+# ClinicalTrials.gov
 
 This repo is a place for members of the 18F ClinicalTrials.gov team to organize their work. 
 
 
-##Background
+## Background
 
 ClinicalTrials.gov is a site that provides patients, their family members, healthcare professionals, researchers, and the public access to information on publicly and privately supported clinical studies on a wide range of diseases and conditions. 
 
