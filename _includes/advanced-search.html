@@ -1,0 +1,216 @@
+<section class="search-advanced">
+  <ul class="usa-accordion">
+    <li>
+      <button class="usa-accordion-button"
+        aria-expanded="false" aria-controls="advanced-search">
+        Advanced search
+      </button>
+      <div class="usa-accordion-content usa-grid" id="advanced-search">
+        <div class="usa-width-one-third">
+          <h3 class="h5">Study status</h3>
+          <fieldset class="usa-fieldset-inputs">
+            <legend class="">Study:</legend>
+            <ul class="usa-unstyled-list">
+              <li>
+                <input id="any-study" type="checkbox" name="study" value="any-study" checked>
+                <label for="any-study">Any</label>
+              </li>
+              <li>
+                <input id="recruiting" type="checkbox" name="study" value="recruiting">
+                <label for="recruiting">Recruiting</label>
+              </li>
+              <li>
+                <input id="not-yet-recruiting" type="checkbox" name="study" value="not-yet-recruiting">
+                <label for="not-yet-recruiting">Not yet recruiting</label>
+              </li>
+              <li>
+                <input id="enrolling-by-invitation" type="checkbox" name="study" value="enrolling-by-invitation">
+                <label for="enrolling-by-invitation">Enrolling by invitation</label>
+              </li>
+              <li>
+                <input id="active-not-recruiting" type="checkbox" name="study" value="active-not-recruiting">
+                <label for="active-not-recruiting">Active, not recruiting</label>
+              </li>
+              <li>
+                <input id="suspended" type="checkbox" name="study" value="suspended">
+                <label for="suspended">Suspended</label>
+              </li>
+              <li>
+                <input id="terminated" type="checkbox" name="study" value="terminated">
+                <label for="terminated">Terminated</label>
+              </li>
+              <li>
+                <input id="unknown-status" type="checkbox" name="study" value="unknown-status">
+                <label for="unknown-status">Unknown status</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="usa-fieldset-inputs">
+            <legend class="">Expanded Access:</legend>
+            <ul class="usa-unstyled-list">
+              <li>
+                <input id="any-expanded-access" type="checkbox" name="expanded-access" value="any-expanded-access" checked>
+                <label for="any-expanded-access">Any</label>
+              </li>
+              <li>
+                <input id="available" type="checkbox" name="expanded-access" value="available">
+                <label for="available">Available</label>
+              </li>
+              <li>
+                <input id="no-longer-available" type="checkbox" name="expanded-access" value="no-longer-available">
+                <label for="no-longer-available">No longer available</label>
+              </li>
+              <li>
+                <input id="temporarily-not-available" type="checkbox" name="expanded-access" value="temporarily-not-available">
+                <label for="temporarily-not-available">Temporarily not available</label>
+              </li>
+              <li>
+                <input id="approved-for-marketing" type="checkbox" name="expanded-access" value="approved-for-marketing">
+                <label for="approved-for-marketing">Approved for marketing</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="usa-width-one-third">
+          <h3 class="h5">Eligibility criteria</h3>
+          <label class="form-label" for="age-group">Age group:</label>
+          <select name="age-group" id="age-group">
+            <option value="all-ages">All ages</option>
+            <option value="value1">Option A</option>
+            <option value="value2">Option B</option>
+            <option value="value3">Option C</option>
+          </select>
+          <fieldset class="usa-fieldset-inputs">
+            <legend class="">Gender:</legend>
+            <ul class="usa-unstyled-list">
+              <li>
+                <input id="any-gender" type="radio" name="gender" value="any-gender" checked>
+                <label for="any-gender">Any</label>
+              </li>
+              <li>
+                <input id="female" type="radio" name="gender" value="female">
+                <label for="female">Female</label>
+              </li>
+              <li>
+                <input id="male" type="radio" name="gender" value="male">
+                <label for="male">Male</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="usa-fieldset-inputs">
+            <legend class="">Accepts healthy volunteers:</legend>
+            <ul class="usa-unstyled-list">
+              <li>
+                <input id="any-volunteers" type="radio" name="accepts-healthy-volunteers" value="any-volunteers" checked>
+                <label for="any-volunteers">Any</label>
+              </li>
+              <li>
+                <input id="yes" type="radio" name="accepts-healthy-volunteers" value="yes">
+                <label for="yes">Yes</label>
+              </li>
+              <li>
+                <input id="no" type="radio" name="accepts-healthy-volunteers" value="no">
+                <label for="no">No</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="usa-width-one-third">
+          <h3 class="h5">Study details</h3>
+          <fieldset class="usa-fieldset-inputs">
+            <legend class="">Type:</legend>
+            <ul class="usa-unstyled-list">
+              <li>
+                <input id="all-types" type="checkbox" name="type" value="all-types" checked>
+                <label for="all-types">All</label>
+              </li>
+              <li>
+                <input id="interventional" type="checkbox" name="type" value="interventional">
+                <label for="interventional">Interventional</label>
+              </li>
+              <li>
+                <input id="observational" type="checkbox" name="type" value="observational">
+                <label for="observational">Observational</label>
+              </li>
+              <li>
+                <input id="expanded-access" type="checkbox" name="type" value="expanded-access">
+                <label for="expanded-access">Expanded access</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="usa-fieldset-inputs">
+            <legend class="">Results available:</legend>
+            <ul class="usa-unstyled-list">
+              <li>
+                <input id="any-results" type="radio" name="results-available" value="any-results" checked>
+                <label for="any-results">Any</label>
+              </li>
+              <li>
+                <input id="with-results" type="radio" name="results-available" value="with-results">
+                <label for="with-results">With results</label>
+              </li>
+              <li>
+                <input id="without-results" type="radio" name="results-available" value="without-results">
+                <label for="without-results">Without results</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="usa-fieldset-inputs">
+            <legend class="">Phase:</legend>
+            <ul class="usa-unstyled-list">
+              <li>
+                <input id="all-phases" type="checkbox" name="phase" value="all-phases" checked>
+                <label for="all-phases">All</label>
+              </li>
+              <li>
+                <input id="0" type="checkbox" name="phase" value="0">
+                <label for="0">0</label>
+              </li>
+              <li>
+                <input id="1" type="checkbox" name="phase" value="1">
+                <label for="1">1</label>
+              </li>
+              <li>
+                <input id="2" type="checkbox" name="phase" value="2">
+                <label for="2">2</label>
+              </li>
+              <li>
+                <input id="3" type="checkbox" name="phase" value="3">
+                <label for="3">3</label>
+              </li>
+              <li>
+                <input id="4" type="checkbox" name="phase" value="4">
+                <label for="4">4</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="usa-fieldset-inputs">
+            <legend class="">Funder type:</legend>
+            <ul class="usa-unstyled-list">
+              <li>
+                <input id="all-funder-types" type="checkbox" name="funder-type" value="all-funder-types" checked>
+                <label for="all-funder-types">All</label>
+              </li>
+              <li>
+                <input id="nih" type="checkbox" name="funder-type" value="nih">
+                <label for="nih">NIH</label>
+              </li>
+              <li>
+                <input id="other-us-federal-agency" type="checkbox" name="funder-type" value="other-us-federal-agency">
+                <label for="other-us-federal-agency">Other U.S. federal agency</label>
+              </li>
+              <li>
+                <input id="industry" type="checkbox" name="funder-type" value="industry">
+                <label for="industry">Industry</label>
+              </li>
+              <li>
+                <input id="other" type="checkbox" name="funder-type" value="other">
+                <label for="other">Other (individuals, universities, organizations)</label>
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>

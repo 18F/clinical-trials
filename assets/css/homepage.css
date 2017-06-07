@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h1
+{
+    font-size: 20px;
+    margin: 0;
+}
+
+h2 , h3
+{
+  margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+  padding-left:0px;
+  color: #333333;
+    background-color:white;
+    font-weight: bold;
+    font-size: 14px;
+}
+h2 + p
+{
+    margin-top: 0px;
+}
+
+#main-content
+{
+    clear: both;
+  margin-bottom:2px;
+}
+
+#trial-count
+{
+/*    float: left; */
+    margin-top: 1.5ex;
+/*    margin-bottom: 10px; */
+}
+
+#trial-count p
+{
+    font-size: 14px;
+/*
+    margin-top: 6px;
+    padding: 3px 0 0 6px;
+*/
+}
+#trial-count .highlight
+{
+    color: #990000;
+}
+
+#primary-box
+{
+    float: left;
+}
+#home-search-box
+{
+  /* Should be similar to home-saved-studies-box below */
+/*    border: 6px solid #C7D4E7; */
+    padding: 8px 18px;
+/*
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+*/
+/*    margin-bottom: 18px; */
+}
+
+/*
+#home-saved-studies-box
+{
+  /* Should be similar to home-search-box above */
+  float:left;
+  padding: 4px 8px 0;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  border-radius:4px;
+/*  min-width: 250px; */
+}
+*/
+
+#home-search-box h2 , p.for-example
+{
+    padding: 0;
+    margin: 0;
+}
+#home-search-box input#search
+{
+    margin-right: 12px;
+    font-size: 14px;
+    padding: 0px 2px 2px 0px;
+}
+/* OBSOLETE
+#search-form
+{
+  margin: auto;
+}
+*/
+#search-help
+{
+    width: 240px;
+    float: right;
+    padding-left: 18px;
+    padding-bottom: 0;
+}
+#search-help ul
+{
+    padding-top: 0px;
+    padding-left: 18px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#search-help ul li
+{
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.right-col
+{
+  width: 250px;
+  float: right;
+}
+.right-col ul
+{
+    margin-left: 0;
+    padding-left: 16px;
+    margin-bottom: 6px;
+    margin-top: 1px;
+}
+.right-col ul li
+{
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+#press-rss
+{
+    border-top: 1px solid #c7d4e7;
+    padding-top:  2px;
+    padding-left: 4px;
+    margin-top: 1px;
+}
+#press-rss ul
+{
+    list-style-type: none;
+    padding-left: 0px;
+}
+#press-rss li
+{
+    font-size: 13px;
+    margin-right: 0;
+    margin-top: 9px;
+    margin-left: 3px;
+}
+#press-rss img
+{
+    vertical-align: -15%;
+    margin-right: 5px;
+    margin-left: 0;
+    padding-left: 0;
+    }
+
+#tools-data
+{
+    padding: 18px 10px 0;
+}
+
+/*
+div#graph
+{
+  width: 300px;
+  margin: auto;
+  margin-top: 1ex;
+}
+*/
+div#graph img
+{
+/*
+  float:left;
+  margin:10px 15px;
+*/
+  max-height:64px;
+  max-width:64px;
+}
+
+/*
+table#homepie {
+  float:left;
+  padding-left:10px;
+}
+*/
+
+table#homepie td {
+  font-size: 12px;
+/*  white-space:nowrap; */
+}
+div#pielegend {
+  margin-top: 10px;
+    font-size: 12px;
+  text-align: left;
+  clear:both;
+}
+
+
+#about-trials
+{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 4px;
+}
+#about-trials h2
+{
+  margin-bottom: 3px;
+}
+
+#footer-menu
+{
+    clear: both;
+}
+
+.welcome
+{
+   /* background blue #205493, NLM blue #265889; Find Studies blue #0071bc;*/
+    background: #205493; /* For browsers that do not support gradients */
+/*    background: -webkit-linear-gradient(left, #205493 , white); /* For Safari 5.1 to 6.0 */
+/*    background: -o-linear-gradient(right, #205493, white); /* For Opera 11.1 to 12.0 */
+/*    background: -moz-linear-gradient(right, #205493, white); /* For Firefox 3.6 to 15 */
+/*    background: linear-gradient(to right, #205493 , white); /* Standard syntax  color: white;*/
+    color: white;
+  padding: 0.25in;
+  font-size: x-large;
+  margin: 0.125in 0;
+/*  padding: 0;
+  padding-right: 35%;
+*/
+}
+
+/* For the Search recruiting studies button */
+input.searchButton
+{
+  opacity:1.0;
+  margin-right: 2em;
+  margin-bottom: 8px;
+  font-weight: bold;
+  background-color: #0071bc;
+  color: white;
+}
+
+/* For the Search our entire database button */
+input.searchButtonAlternate
+{
+  background-color: white;
+  color: #0071bc;
+}
+
+/* Overrides for w3-ct.css stuff */
+.w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th
+{
+    padding: 2px;
+}
