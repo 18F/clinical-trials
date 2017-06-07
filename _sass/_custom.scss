@@ -32,3 +32,61 @@
 //   margin-bottom: 4px;
 //   margin-top: 3px;
 // }
+
+
+// Returns background color to blue
+body {
+  background: #205493;
+}
+
+a {
+  border-bottom: none;
+}
+
+.welcome {
+  font-weight: $font-normal;
+}
+
+// Hide clearField from view (also removed via JS b/c was being dynamically added)
+button.clearFieldIE {
+  display: none;
+}
+
+// Display straight corners and no up and down arrows
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select {
+    -webkit-appearance: none !important;
+  }
+}
+
+// Can also remove this div
+div.inputFieldLabel {
+  font-weight: $font-normal;
+  padding-top: 0;
+}
+
+select.selectInputField {
+  line-height: 1.3 !important;
+  padding: 1rem 0.7em;
+}
+
+.search-legend {
+  font-family: $georgia;
+  font-weight: $font-normal;
+  font-size: 2.4rem;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+input.searchButton {
+  border: inherit;
+  border-radius: $border-radius;
+
+  &:hover {
+    background-color: $color-primary-darker;
+  }
+}
