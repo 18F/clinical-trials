@@ -348,9 +348,25 @@
 </script><noscript></noscript>
 
     <form class="usa-form-large" method="get" action="/beta/results">
-      <fieldset title="All fields optional">
+      <fieldset class="fieldset-search" title="All fields optional">
         <legend class="search-legend">Search for studies which are:</legend>
-
+        <fieldset class="usa-fieldset-inputs">
+          <legend class="legend-study-status">Study status:</legend>
+          <ul class="usa-unstyled-list">
+            <li>
+              <input id="study-recruiting" type="radio" checked name="study-status" value="stanton">
+              <label for="study-recruiting">Currently recruiting</label>
+            </li>
+            <li>
+              <input id="study-closed" type="radio" name="study-status" value="anthony">
+              <label for="study-closed">Closed</label>
+            </li>
+            <li>
+              <input id="study-all" type="radio" name="study-status" value="anthony">
+              <label for="study-all">All studies (closed or recruiting)</label>
+            </li>
+          </ul>
+        </fieldset>
         <div class="inputFieldLabel">
           <label for="home-search-condition-query">Condition / Disease</label>
           <span class="usa-form-hint">For example: cancer, oxytoine, or radiation</span>
