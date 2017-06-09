@@ -117,6 +117,7 @@ select {
 input.searchButton {
   border: inherit;
   border-radius: $border-radius;
+  display: inline-block;
   margin-right: 1.5em;
 
   &:hover {
