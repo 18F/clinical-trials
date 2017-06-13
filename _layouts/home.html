@@ -374,7 +374,7 @@
         <input id="home-search-condition-query" class="textInputField" name="cond" tabindex="1" maxlength="250" type="text">
         <button class="clearField" type="button" title="Clear the Condition/Disease field" onclick="$('#home-search-condition-query').val('');">x</button>
         <div style="display:none" id="home-search-condition-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
-        <script type="text/javascript"> new ExtensionsMgr("home-search-condition-query","home-search-condition-ExtensionsId","/beta/rpc/extend/cond","cond"); </script><noscript></noscript>
+        <script type="text/javascript"> new ExtensionsMgr("home-search-condition-query","home-search-condition-ExtensionsId","{{ site.currenturl }}/beta/rpc/extend/cond","cond"); </script><noscript></noscript>
         <div class="inputFieldLabel">
           <label for="home-search-other-query">Keywords</label>
           <span class="usa-form-hint">For example: NCT number, drug name, investigator name</span>
