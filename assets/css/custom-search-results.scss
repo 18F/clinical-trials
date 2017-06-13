@@ -10,6 +10,19 @@ $output-bourbon-deprecation-warnings: false !default;
 @import 'lib/uswds/core/variables';
 @import "lib/uswds/elements/labels";
 
+html {
+  font-family: $font-sans;
+  font-size: $em-base;
+}
+
+body {
+  font-size: $base-font-size;
+}
+
 .search-term-highlight {
   font-weight: bold;
+}
+
+.usa-label {
+  font-size: inherit;
 }
