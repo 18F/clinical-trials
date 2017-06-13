@@ -1,4 +1,4 @@
 ---
 layout: search-results
-permalink: /search-results
+permalink: /search-results/
 ---
