@@ -1,0 +1,15 @@
+---
+---
+$output-bourbon-deprecation-warnings: false !default;
+
+// Vendor -------------- //
+@import 'lib/uswds/lib/bourbon';
+@import 'lib/uswds/lib/neat';
+@import 'lib/uswds/lib/normalize';
+
+@import 'lib/uswds/core/variables';
+@import "lib/uswds/elements/labels";
+
+.search-term-highlight {
+  font-weight: bold;
+}
