@@ -125,6 +125,11 @@ input.searchButton {
   }
 }
 
+.searchButton {
+  @include padding(null 27px);
+  margin-right: 1.5em;
+}
+
 .home-sidebar-heading {
   font-size: 14px;
   font-family: $font-sans;
