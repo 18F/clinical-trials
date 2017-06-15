@@ -419,7 +419,6 @@
 
     <div id="search-results" style="width:80%;max-width:54em;margin:auto;">
 
-
     <form id="ResultsPageForm" method="get" action="/beta/results" onsubmit="showWorking(); return true;" style="margin:auto;margin-top:10px;">
     <fieldset style="border-radius:8px;margin-top:6px;border:1px solid lightgrey;background-color:#f6f6f6;">
     <legend style="background-color:white;border-radius:8px;padding:2px;text-align:left;cursor:pointer;font-size:larger;"
@@ -1430,7 +1429,14 @@ var updateUnknownFootnote = function() {
 
 
 <!--                       <table id="theDataTable" class="stripe row-border" width="100%" cellspacing="0"></table>  -->
-
+<form class="usa-form search-sort">
+  <label for="options">Sort by</label>
+  <select name="options" id="options">
+    <option value="value3">Relevance</option>
+    <option value="value1">Newest</option>
+    <option value="value2">Oldest</option>
+  </select>
+</form>
 <table id="theDataTable" class="stripe row-border dataTable no-footer dtr-" width="100%" cellspacing="0" aria-describedby="theDataTable_info" role="grid">
   <thead>
     <tr role="row">
