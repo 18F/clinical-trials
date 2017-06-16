@@ -1,0 +1,814 @@
+---
+---
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" lang='en'>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="referrer" content="origin-when-cross-origin"/>
+  <title>Home - ClinicalTrials.gov</title>
+
+  <link rel="shortcut icon" href="{{ site.currenturl }}/beta/html/images/favicon.ico" />
+  <link rel='apple-touch-icon-precomposed' href='/apple-touch-icon-144x144.png' sizes='144x144'>
+  <link rel='apple-touch-icon-precomposed' href='/apple-touch-icon-114x114.png' sizes='114x114'>
+  <link rel='apple-touch-icon-precomposed' href='/apple-touch-icon-72x72.png'   sizes='72x72'>
+  <link rel='apple-touch-icon-precomposed' href='/apple-touch-icon-precomposed.png' >
+  <link rel='apple-touch-icon-precomposed' href='/apple-touch-icon.png' >
+
+  <link rel="stylesheet" type="text/css" href="{{ site.currenturl }}/beta/html/ct3/jquery/css/superfish.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{ site.currenturl }}/beta/html/ct3/jquery/css/superfish-vertical.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/base.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.currenturl }}/beta/html/ct3/css/print.css" media="print" />
+  <link rel="stylesheet" href="{{ site.currenturl }}/beta/html/ct3/css/w3-ct.css" type="text/css" />
+
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/homepage.css" />
+
+  <!-- New CSS -->
+  <!-- <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom.css"> -->
+
+<style type="text/css">
+  .welcome {
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+
+  .welcome-heading {
+    background: #205493;
+    color: white;
+    font-size: x-large;
+    font-weight: $font-normal;
+    margin: 0.125in 0;
+  }
+</style>
+
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="{{ site.currenturl }}/beta/html/ct3/css/w3-ct-oldIE.css" type="text/css" />
+  <![endif]-->
+
+
+
+     <!--[if lte IE 7]>
+           <link href="{{ site.currenturl }}/beta/html/ct3/css/target-IE7-and-below.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+
+    <link rel="stylesheet" type="text/css" href="{{ site.currenturl }}/beta/html/ct3/css/extensionsMgr.css" />
+
+    <script type="text/javascript" src="{{ site.currenturl }}/beta/html/ct3/jquery/js/jquery.min.js"></script><noscript></noscript>
+    <script type="text/javascript" src="{{ site.currenturl }}/beta/html/ct3/jquery/js/superclick.js"></script><noscript></noscript>
+    <script type="text/javascript" src="{{ site.currenturl }}/beta/html/ct3/jquery/js/jquery.cookie.js"></script><noscript></noscript>
+    <script type="text/javascript" src="{{ site.currenturl }}/beta/html/images/frame/ct.js"></script><noscript></noscript>
+    <script type="text/javascript" src="{{ site.currenturl }}/beta/html/ct3/js/ctmenu.js?v=b"></script><noscript></noscript>
+
+    <script type="text/javascript" src="{{ site.currenturl }}/beta/html/images/foresee/foresee-trigger.js"></script><noscript></noscript>
+
+  <script type="text/javascript" src="{{ site.currenturl }}/beta/html/ct3/js/extensionsMgr.js"></script><noscript></noscript>
+
+<script type="text/javascript">
+  $(window).load(function(){
+    loadCTCommon();
+    });  </script><noscript></noscript>
+
+
+  <script type="text/javascript">
+    ncbi_pingWithImage=true;
+    __ncbi_stat_url="//www.ncbi.nlm.nih.gov/stat";
+  </script>
+
+  <meta name="ncbi_sid" content="45d8c3608f916f96_1c34aSID"/>
+  <meta name="ncbi_app" content="ctgov"/>
+  <meta name="ncbi_db" content="ctgov"/>
+  <meta name="ncbi_pdid" content="home"/>
+  <meta name="ncbi_ctreqid" content="RRc0003o"/>
+  <meta name="ncbi_ctsessid" content="SRc00019"/>
+  <meta name="ncbi_ctipid" content="IqACmCbl"/>
+  <meta name="ncbi_cthost" content="wp4"/>
+
+</head>
+
+<body class="js">
+<div id="skip"> <a href="#home-search-box">Skip to Main Content</a> </div>
+
+<script type="text/javascript" src="/beta/html/ct3/jquery/js/jquery.min.js"></script><noscript></noscript>
+<script type="text/javascript">
+  var RetractableBannerStateProperty = 'CT_NewsBannerState';
+
+  ToggleBanner = function()
+    {
+        var theAccordion = $('#retractableBanner');
+        if (theAccordion.css("display") == "none") {
+            $('#showMore').css('visibility', 'hidden');
+          } else {
+            $('#showMore').css('visibility', 'visible');
+          }
+        theAccordion.slideToggle({
+            duration: 'fast',
+            start: function(){
+                      if (typeof FuncReAlign !== 'undefined') {
+                $( "table.fixedHeader-floating" ).hide();
+              }
+      },
+            done: function(){
+              if (theAccordion.css("display") == "none") {
+                rememberRetractableBannerState('hide');
+              } else {
+                rememberRetractableBannerState('show');
+              }
+              if (typeof FuncReAlign !== 'undefined') {
+                  FuncReAlign();
+                $( "table.fixedHeader-floating" ).show();
+              }
+            }
+    });
+    };
+
+  var rememberRetractableBannerState = function(newState) {
+    try {
+      sessionStorage.setItem(RetractableBannerStateProperty, newState);
+    } catch (e) {}
+  };
+
+  $(window).ready(function(){
+    try {
+      var retractableBannerState = sessionStorage.getItem(RetractableBannerStateProperty);
+              if (retractableBannerState === null  || retractableBannerState === 'show') {
+        ToggleBanner();
+      }
+    } catch (e) {};
+  });
+</script><noscript></noscript>
+<div class="w3-container w3-center" style="padding:1.5ex 0.125in 0;background:#205493;color:white">
+  <div style="font-weight:bold;">This site will become the new ClinicalTrials.gov on June 19th. <a href="https://www.nlm.nih.gov/pubs/techbull/mj17/mj17_clinicaltrials_improve_usability.html" style="margin-left:1em;color:white;border-bottom-color:white;">Learn more.</a>
+    <div id="showMore" style="float:right;cursor:pointer;border-bottom:1px dotted white;" onclick="ToggleBanner();">Show more <img src="{{ site.currenturl }}/beta/html/ct3/images/show-more.png" style="width:17px;"></div>
+  </div>
+  <div id="retractableBanner" style="margin-top:1ex;display:none;">We will be updating this site in phases. This allows us to move faster and to deliver better services.
+    <div id="showLess" style="float:right;cursor:pointer;border-bottom:1px dotted white;" onclick="ToggleBanner();">Show less <img src="{{ site.currenturl }}/beta/html/ct3/images/show-less.png" style="width:17px;"></div>
+  </div>
+</div>
+<div id="wrapper" style="padding-top:0;">  <div id="longAlert" class="w3-hide-small" style="background-color:papayawhip;font-size:small;margin-bottom:1.5ex;">
+  <img src="{{ site.currenturl }}/beta/html/ct3/images/warning.png" alt="ClinicalTrials.gov Menu" style="max-width:0.8rem;cursor:pointer;"/>
+    <b>IMPORTANT</b>: Listing of a study on this site does not reflect endorsement by the National Institutes of Health. Talk with a trusted healthcare professional before volunteering for a study.  <a href="/beta/about-site/disclaimer">Read more...</a>
+</div>
+<div id="shortAlert" class="w3-hide-medium w3-hide-large" style="background-color:papayawhip;font-size:small;margin-bottom:1.5ex;">
+  <img src="{{ site.currenturl }}/beta/html/ct3/images/warning.png" alt="ClinicalTrials.gov Menu" style="max-width:0.8rem;cursor:pointer;"/>
+    <b>IMPORTANT</b>: Talk with a trusted healthcare professional before volunteering for a study. <a href="/beta/about-site/disclaimer">Read more...</a>
+</div>
+
+
+  <div id="header" style="float:left;"> <a href="{{ site.baseurl }}/" style="border-style:none;box-shadow:none;"><img src='{{ site.currenturl }}/beta/html/ct3/images/ct.gov-logo-beta.png' alt='ClinicalTrials.gov' style='max-width:100%;' /></a><br />
+    </div>
+          <div id="hamburger" class="w3-hide-medium w3-hide-large" style="float:right;border-width:0;display:block;margin-left:1em;padding:4px;"
+      title="Show menus">
+      <img src="{{ site.currenturl }}/beta/html/ct3/images/hamburgerMenuIcon.png" alt="ClinicalTrials.gov Menu" style="max-width:30px;cursor:pointer;"
+       onclick="$('#global-nav-popupMenu').toggle();"/>
+    </div>
+    <div id="global-nav-popupMenu" class="w3-hide-medium w3-hide-large w3-modal w3-center"
+       style="display:none;" onclick="$('#global-nav-popupMenu').hide();">      <div id="global-nav-popupMenu-content" class="w3-modal-content">
+        <div class="w3-container">
+            <span onclick="$('#global-nav-popupMenu').hide();"
+              class="w3-closebtn">&times;</span>
+          <ul class="sf-menu sf-vertical">
+                  <li class="first"><a href="{{ site.currenturl }}/beta/search/index">Find Studies<img src="/beta/html/ct3/images/pulldown.png" alt="Find Studies Menu"></a>
+      <ul>
+                      <li                  ><a                  href="/beta/home">New Search</a></li>
+                      <li                  ><a         href="/beta/search/advanced">Advanced Search</a></li>
+                      <li                  ><a     href="/beta/search/browse?brwse=cond_cat">See Studies by Topic</a></li>
+                      <li                  ><a             href="/beta/search/map">See Studies on Map</a></li>
+                      <li class="new-group"><a           href="/beta/help/how-find/index">How to Search</a></li>
+                      <li                  ><a href="/beta/help/how-use-search-results">How to Use Search Results</a></li>
+                      <li                  ><a        href="/beta/help/how-find/find-study-results">How to Find Results of Studies</a></li>
+                      <li                  ><a          href="/beta/help/how-read-study">How to Read a Study Record</a></li>
+      </ul>
+      </li>
+      <li><a href="/beta/about-studies">About Studies<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="About Studies Menu"></a>
+      <ul>
+                      <li><a href="/beta/about-studies/learn">Learn About Studies</a></li>
+                      <li><a  href="/beta/about-studies/other-sites">Other Sites About Studies</a></li>
+                      <li><a         href="/beta/about-studies/glossary">Glossary of Common Site Terms</a></li>
+      </ul>
+      </li>
+      <li><a href="/beta/manage-recs">Submit Studies<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="Submit Studies Menu"></a>
+      <ul>
+                      <li><a                          href="/beta/manage-recs/background">Why Should I Register and Submit Results?</a></li>
+                      <li><a                                href="/beta/manage-recs/fdaaa">FDAAA 801 Requirements</a></li>
+                      <li class="new-group"><a    href="/beta/manage-recs/how-apply">How to Apply for an Account</a></li>
+                      <li><a                        href="/beta/manage-recs/how-register">How to Register Your Study</a></li>
+                      <li><a                         href="/beta/manage-recs/how-edit">How to Edit Your Study Record</a></li>
+                      <li><a                   href="/beta/manage-recs/how-report">How to Submit Your Results</a></li>
+                      <li class="new-group"><a       href="/beta/manage-recs/faq">Frequently Asked Questions</a></li>
+                      <li                  ><a href="/beta/manage-recs/resources">Support Materials</a></li>
+                      <li                  ><a      href="/beta/manage-recs/present">Training Materials</a></li>
+      </ul>
+      </li>
+      <li><a href="/beta/resources">Resources<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="Resources Menu"></a>
+      <ul>
+                      <li                  ><a    href="/beta/resources/pubs">Selected Publications</a></li>
+                      <li                  ><a       href="/beta/resources/alert">Clinical Alerts and Advisories</a></li>
+                      <li                  ><a     href="/beta/resources/rss">RSS Feeds</a></li>
+                      <li class="new-group"><a href="/beta/resources/trends">Trends, Charts, and Maps</a></li>
+                      <li                  ><a   href="/beta/resources/download">Downloading Content for Analysis</a></li>
+      </ul>
+      </li>
+      <li class="last"><a href="/beta/about-site">About Site<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="About Site Menu"></a>
+      <ul>
+                      <li class="new-group"><a href="/beta/about-site/background">ClinicalTrials.gov Background</a></li>
+                      <li                  ><a    href="/beta/about-site/results">About the Results Database</a></li>
+                      <li                  ><a    href="/beta/about-site/history">History, Policies, and Laws</a></li>
+                      <li                  ><a   href="/beta/about-site/for-media">Media/Press Resources</a></li>
+                      <li class="new-group"><a          href="/beta/about-site/link-to">Linking to This Site</a></li>
+                      <li                  ><a           href="/beta/about-site/terms-conditions">Terms and Conditions</a></li>
+                      <li                  ><a      href="/beta/about-site/disclaimer">Disclaimer</a></li>
+      </ul>
+      </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+      <div id="savedStudies" style="float:right;padding:4px 8px;">        <div id="cart" style="cursor:pointer; display: none;" onclick="location.href=('/beta/results'+cartToURL()); showWorking();">
+        <button class="savedStudiesEnabled" id="open-cart-link" type="button"
+          onclick="location.href=('/beta/results'+cartToURL()); showWorking();"
+          title="Show previously saved studies.">Saved Studies</button>
+        </div>
+      <button class="savedStudiesDisabled" id="cart-disabled" type="button" disabled
+        title="There are no saved studies to show. You can save studies to visit later from the search results page">Saved Studies (0)</button>
+    </div>
+
+    <div style="clear:right;text-align:right;padding-top:1ex;padding-right:8px;font-size:small;">
+      <a href="https://survey.foreseeresults.com/survey/display?cid=WyHFr2m0PoaGCBUsi00QIQ==&sid=link-ct" target="_blank">Give us feedback</a></div>
+    <script type="text/javascript" src="/beta/html/ct3/js/cart.js"></script><noscript></noscript>
+    <span style="display:inline-block;font-weight:bold; background-color:#ffffaa;">
+<a href="https://clinicaltrials.gov">Leave beta test site</a>
+</span>
+
+
+<div id="global-nav" class="w3-hide-small">
+  <ul class="sf-menu sf-vertical">
+      <li class="first"><a href="/beta/search/index">Find Studies<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="Find Studies Menu"></a>
+      <ul>
+                      <li                  ><a                  href="/beta/home">New Search</a></li>
+                      <li                  ><a         href="/beta/search/advanced">Advanced Search</a></li>
+                      <li                  ><a     href="/beta/search/browse?brwse=cond_cat">See Studies by Topic</a></li>
+                      <li                  ><a             href="/beta/search/map">See Studies on Map</a></li>
+                      <li class="new-group"><a           href="/beta/help/how-find/index">How to Search</a></li>
+                      <li                  ><a href="/beta/help/how-use-search-results">How to Use Search Results</a></li>
+                      <li                  ><a        href="/beta/help/how-find/find-study-results">How to Find Results of Studies</a></li>
+                      <li                  ><a          href="/beta/help/how-read-study">How to Read a Study Record</a></li>
+      </ul>
+      </li>
+      <li><a href="/beta/about-studies">About Studies<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="About Studies Menu"></a>
+      <ul>
+                      <li><a href="/beta/about-studies/learn">Learn About Studies</a></li>
+                      <li><a  href="/beta/about-studies/other-sites">Other Sites About Studies</a></li>
+                      <li><a         href="/beta/about-studies/glossary">Glossary of Common Site Terms</a></li>
+      </ul>
+      </li>
+      <li><a href="/beta/manage-recs">Submit Studies<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="Submit Studies Menu"></a>
+      <ul>
+                      <li><a                          href="/beta/manage-recs/background">Why Should I Register and Submit Results?</a></li>
+                      <li><a                                href="/beta/manage-recs/fdaaa">FDAAA 801 Requirements</a></li>
+                      <li class="new-group"><a    href="/beta/manage-recs/how-apply">How to Apply for an Account</a></li>
+                      <li><a                        href="/beta/manage-recs/how-register">How to Register Your Study</a></li>
+                      <li><a                         href="/beta/manage-recs/how-edit">How to Edit Your Study Record</a></li>
+                      <li><a                   href="/beta/manage-recs/how-report">How to Submit Your Results</a></li>
+                      <li class="new-group"><a       href="/beta/manage-recs/faq">Frequently Asked Questions</a></li>
+                      <li                  ><a href="/beta/manage-recs/resources">Support Materials</a></li>
+                      <li                  ><a      href="/beta/manage-recs/present">Training Materials</a></li>
+      </ul>
+      </li>
+      <li><a href="/beta/resources">Resources<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="Resources Menu"></a>
+      <ul>
+                      <li                  ><a    href="/beta/resources/pubs">Selected Publications</a></li>
+                      <li                  ><a       href="/beta/resources/alert">Clinical Alerts and Advisories</a></li>
+                      <li                  ><a     href="/beta/resources/rss">RSS Feeds</a></li>
+                      <li class="new-group"><a href="/beta/resources/trends">Trends, Charts, and Maps</a></li>
+                      <li                  ><a   href="/beta/resources/download">Downloading Content for Analysis</a></li>
+      </ul>
+      </li>
+      <li class="last"><a href="/beta/about-site">About Site<img src="{{ site.currenturl }}/beta/html/ct3/images/pulldown.png" alt="About Site Menu"></a>
+      <ul>
+                      <li class="new-group"><a href="/beta/about-site/background">ClinicalTrials.gov Background</a></li>
+                      <li                  ><a    href="/beta/about-site/results">About the Results Database</a></li>
+                      <li                  ><a    href="/beta/about-site/history">History, Policies, and Laws</a></li>
+                      <li                  ><a   href="/beta/about-site/for-media">Media/Press Resources</a></li>
+                      <li class="new-group"><a          href="/beta/about-site/link-to">Linking to This Site</a></li>
+                      <li                  ><a           href="/beta/about-site/terms-conditions">Terms and Conditions</a></li>
+                      <li                  ><a      href="/beta/about-site/disclaimer">Disclaimer</a></li>
+      </ul>
+      </li>
+  </ul>
+    <div style="clear:both;"></div>
+</div>
+<div style="clear:both;"></div>
+
+
+
+<div class="w3-hide-small welcome"><h1 class="welcome-heading" style="padding:0;padding-right:35%;">
+  ClinicalTrials.gov is a registry and results database of publicly
+  and privately supported clinical studies of human participants conducted around the world.</h1>
+</div>
+
+
+
+
+<div class="w3-row">
+    <div id="tools-data" class="w3-container w3-hide-medium w3-hide-large" style="padding:1ex 0.125in;background:#205493;color:white">
+  ClinicalTrials.gov is a registry and results database of publicly and privately supported clinical studies of human participants conducted around the world.
+</div>
+</div>
+
+<div id="main-content" class="w3-row">
+
+  <div id="primary-box" class="w3-col l8">
+    <script type="text/javascript">
+// $(document).ready(function() {
+//       var userAgent = navigator.userAgent.toLowerCase();
+//   if ((userAgent.indexOf("msie") > -1) || (userAgent.indexOf("rv:11") > -1))
+//   {
+//     $( ".clearFieldIE" ).css('padding', '0 4px');
+//   } else {
+//       $( ".clearField" ).css('display', 'inline');
+//   };
+
+//         $( "#Country1" ).change(function() {
+//     var theCountry = $(this).val();
+//     $( "#State1" ).val("");
+//     if (theCountry == "NA:US") {
+//       $( "#StateRow" ).show();
+//     } else {
+//       $( "#StateRow" ).hide();
+//     };
+//   });
+
+//                 $("input:text").keypress(function(event) {
+//         if (event.keyCode == 13) {
+//             event.preventDefault();
+//             return false;
+//         }
+//     });
+// });
+
+  // Dynamically builds a new Advanced Search URL and loads that page
+  var gotoAdvSearchURL = function() {
+    var advSearchURL = "/beta/search/advanced?";
+    var params  = new Object();
+    params.cond   = $("input#home-search-condition-query").val();
+    params.term   = $("input#home-search-other-query").val();
+    params.state1     = $("select#State1").val();
+    params.cntry1     = $("select#Country1").val();
+
+    advSearchURL = advSearchURL + $.param(params); // URL encodes too
+    window.location.href = advSearchURL;
+  };
+</script><noscript></noscript>
+
+
+
+    <form method="get" action="{{ site.baseurl }}/search-results/">
+      <fieldset class="w3-container" style="border-radius:8px;margin-top:6px;border:1px solid lightgrey;background-color:#f6f6f6;" title="All fields optional">
+        <legend style="background-color:white;border-radius:8px;padding:2px;font-size:larger"><span>Search <span style="font-size:x-small;">(all fields optional)</span></span></legend>
+        <div class="w3-row w3-padding-8" title="Name of a Disease  or Medical Condition. Known synonyms automatically included">
+          <div class="w3-col m3 w3-right-align small-left inputFieldLabel"><label for="home-search-condition-query"><a href="/beta/help/conditions_instr" title="Help for Conditions search field"
+            onclick="openPopupWindow('/beta/help/conditions_instr',1000); return false;">Condition / Disease</a>: </label>
+          </div>
+          <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
+            <input id="home-search-condition-query" class="textInputField" name="cond" tabindex="1" maxlength="250" type="text"
+              placeholder='e.g. breast cancer'>
+            <button class="clearField" type="button" title="Clear the Condition/Disease field" onclick="$('#home-search-condition-query').val('');">x</button>
+              <div style="display:none" id="home-search-condition-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
+              <script type="text/javascript"> new ExtensionsMgr("home-search-condition-query","home-search-condition-ExtensionsId","/beta/rpc/extend/cond","cond"); </script><noscript></noscript>
+          </div>
+        </div>
+        <div class="w3-row w3-padding-8" title="Other terms such as an NCT number, drug name, investigator name">
+            <div class="w3-col m3 w3-right-align small-left inputFieldLabel"><label for="home-search-other-query"><a href="/beta/help/search_terms" title="Help for the Other Terms field"
+              onclick="openPopupWindow('/beta/help/search_terms',1000); return false;">Other Terms</a>: </label>
+            </div>
+            <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
+              <input id="home-search-other-query" class="textInputField" name="term" tabindex="3" maxlength="250" type="text" style="width:100%;"
+                placeholder='e.g., NCT number, drug name, investigator name'>
+            <button class="clearField" type="button" title="Clear the Other Terms field" onclick="$('#home-search-other-query').val('');">x</button>
+          </div>
+        </div>
+
+        <div class="w3-row w3-padding-8" title="Country with at least one study trial location">
+          <div class="w3-col m3 w3-right-align small-left inputFieldLabel">
+              <label for="Country1"><a href="/beta/help/country_state" title="Help for Country search field" onclick="openPopupWindowShortWidth('/beta/help/country_state',1000); return false;">Country</a>: </label>
+          </div>
+          <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
+              <select id="Country1" class="selectInputField" name="cntry1" tabindex="4" style="width:100%;">
+                                  <option value=""  selected="selected"  ></option>
+                                    <option value="NA:US"  >United States</option>
+                                    <option value="SS:AF"  >Afghanistan</option>
+                                    <option value="EU:AL"  >Albania</option>
+                                    <option value="AF:DZ"  >Algeria</option>
+                                    <option value="PA:AS"  >American Samoa</option>
+                                    <option value="EU:AD"  >Andorra</option>
+                                    <option value="AF:AO"  >Angola</option>
+                                    <option value="SA:AR"  >Argentina</option>
+                                    <option value="NS:AM"  >Armenia</option>
+                                    <option value="CA:AW"  >Aruba</option>
+                                    <option value="PA:AU"  >Australia</option>
+                                    <option value="EU:AT"  >Austria</option>
+                                    <option value="NS:AZ"  >Azerbaijan</option>
+                                    <option value="CA:BS"  >Bahamas</option>
+                                    <option value="ME:BH"  >Bahrain</option>
+                                    <option value="SS:BD"  >Bangladesh</option>
+                                    <option value="CA:BB"  >Barbados</option>
+                                    <option value="NS:BY"  >Belarus</option>
+                                    <option value="EU:BE"  >Belgium</option>
+                                    <option value="CA:BZ"  >Belize</option>
+                                    <option value="AF:BJ"  >Benin</option>
+                                    <option value="CA:BM"  >Bermuda</option>
+                                    <option value="SS:BT"  >Bhutan</option>
+                                    <option value="SA:BO"  >Bolivia</option>
+                                    <option value="EU:BA"  >Bosnia and Herzegovina</option>
+                                    <option value="AF:BW"  >Botswana</option>
+                                    <option value="SA:BR"  >Brazil</option>
+                                    <option value="SE:BN"  >Brunei Darussalam</option>
+                                    <option value="EU:BG"  >Bulgaria</option>
+                                    <option value="AF:BF"  >Burkina Faso</option>
+                                    <option value="AF:BI"  >Burundi</option>
+                                    <option value="SE:KH"  >Cambodia</option>
+                                    <option value="AF:CM"  >Cameroon</option>
+                                    <option value="NA:CA"  >Canada</option>
+                                    <option value="CA:KY"  >Cayman Islands</option>
+                                    <option value="AF:CF"  >Central African Republic</option>
+                                    <option value="AF:TD"  >Chad</option>
+                                    <option value="SA:CL"  >Chile</option>
+                                    <option value="ES:CN"  >China</option>
+                                    <option value="SA:CO"  >Colombia</option>
+                                    <option value="AF:CG"  >Congo</option>
+                                    <option value="AF:CD"  >Congo, The Democratic Republic of the</option>
+                                    <option value="CA:CR"  >Costa Rica</option>
+                                    <option value="EU:HR"  >Croatia</option>
+                                    <option value="CA:CU"  >Cuba</option>
+                                    <option value="ME:CY"  >Cyprus</option>
+                                    <option value="EU:CZ"  >Czech Republic</option>
+                                    <option value="AF:CI"  >C&#244;te D&apos;Ivoire</option>
+                                    <option value="EU:DK"  >Denmark</option>
+                                    <option value="AF:DJ"  >Djibouti</option>
+                                    <option value="CA:DO"  >Dominican Republic</option>
+                                    <option value="SA:EC"  >Ecuador</option>
+                                    <option value="AF:EG"  >Egypt</option>
+                                    <option value="CA:SV"  >El Salvador</option>
+                                    <option value="AF:GQ"  >Equatorial Guinea</option>
+                                    <option value="EU:EE"  >Estonia</option>
+                                    <option value="AF:ET"  >Ethiopia</option>
+                                    <option value="EU:FO"  >Faroe Islands</option>
+                                    <option value="PA:FJ"  >Fiji</option>
+                                    <option value="EU:FI"  >Finland</option>
+                                    <option value="EU:CS"  >Former Serbia and Montenegro</option>
+                                    <option value="EU:YU"  >Former Yugoslavia</option>
+                                    <option value="EU:FR"  >France</option>
+                                    <option value="PA:PF"  >French Polynesia</option>
+                                    <option value="AF:GA"  >Gabon</option>
+                                    <option value="AF:GM"  >Gambia</option>
+                                    <option value="NS:GE"  >Georgia</option>
+                                    <option value="EU:DE"  >Germany</option>
+                                    <option value="AF:GH"  >Ghana</option>
+                                    <option value="EU:GI"  >Gibraltar</option>
+                                    <option value="EU:GR"  >Greece</option>
+                                    <option value="NA:GL"  >Greenland</option>
+                                    <option value="CA:GD"  >Grenada</option>
+                                    <option value="CA:GP"  >Guadeloupe</option>
+                                    <option value="PA:GU"  >Guam</option>
+                                    <option value="CA:GT"  >Guatemala</option>
+                                    <option value="AF:GN"  >Guinea</option>
+                                    <option value="AF:GW"  >Guinea-Bissau</option>
+                                    <option value="SA:GY"  >Guyana</option>
+                                    <option value="CA:HT"  >Haiti</option>
+                                    <option value="EU:VA"  >Holy See (Vatican City State)</option>
+                                    <option value="CA:HN"  >Honduras</option>
+                                    <option value="ES:HK"  >Hong Kong</option>
+                                    <option value="EU:HU"  >Hungary</option>
+                                    <option value="EU:IS"  >Iceland</option>
+                                    <option value="SS:IN"  >India</option>
+                                    <option value="SE:ID"  >Indonesia</option>
+                                    <option value="ME:IR"  >Iran, Islamic Republic of</option>
+                                    <option value="ME:IQ"  >Iraq</option>
+                                    <option value="EU:IE"  >Ireland</option>
+                                    <option value="ME:IL"  >Israel</option>
+                                    <option value="EU:IT"  >Italy</option>
+                                    <option value="CA:JM"  >Jamaica</option>
+                                    <option value="ES:JP"  >Japan</option>
+                                    <option value="ME:JO"  >Jordan</option>
+                                    <option value="NS:KZ"  >Kazakhstan</option>
+                                    <option value="AF:KE"  >Kenya</option>
+                                    <option value="ES:KP"  >Korea, Democratic People&apos;s Republic of</option>
+                                    <option value="ES:KR"  >Korea, Republic of</option>
+                                    <option value="ME:KW"  >Kuwait</option>
+                                    <option value="NS:KG"  >Kyrgyzstan</option>
+                                    <option value="SE:LA"  >Lao People&apos;s Democratic Republic</option>
+                                    <option value="EU:LV"  >Latvia</option>
+                                    <option value="ME:LB"  >Lebanon</option>
+                                    <option value="AF:LS"  >Lesotho</option>
+                                    <option value="AF:LR"  >Liberia</option>
+                                    <option value="AF:LY"  >Libyan Arab Jamahiriya</option>
+                                    <option value="EU:LT"  >Lithuania</option>
+                                    <option value="EU:LU"  >Luxembourg</option>
+                                    <option value="ES:MO"  >Macau</option>
+                                    <option value="EU:MK"  >Macedonia, The Former Yugoslav Republic of</option>
+                                    <option value="AF:MG"  >Madagascar</option>
+                                    <option value="AF:MW"  >Malawi</option>
+                                    <option value="SE:MY"  >Malaysia</option>
+                                    <option value="SS:MV"  >Maldives</option>
+                                    <option value="AF:ML"  >Mali</option>
+                                    <option value="EU:MT"  >Malta</option>
+                                    <option value="CA:MQ"  >Martinique</option>
+                                    <option value="AF:MR"  >Mauritania</option>
+                                    <option value="AF:MU"  >Mauritius</option>
+                                    <option value="NA:MX"  >Mexico</option>
+                                    <option value="NS:MD"  >Moldova, Republic of</option>
+                                    <option value="EU:MC"  >Monaco</option>
+                                    <option value="ES:MN"  >Mongolia</option>
+                                    <option value="EU:ME"  >Montenegro</option>
+                                    <option value="CA:MS"  >Montserrat</option>
+                                    <option value="AF:MA"  >Morocco</option>
+                                    <option value="AF:MZ"  >Mozambique</option>
+                                    <option value="SE:MM"  >Myanmar</option>
+                                    <option value="AF:NA"  >Namibia</option>
+                                    <option value="SS:NP"  >Nepal</option>
+                                    <option value="EU:NL"  >Netherlands</option>
+                                    <option value="EU:AN"  >Netherlands Antilles</option>
+                                    <option value="PA:NC"  >New Caledonia</option>
+                                    <option value="PA:NZ"  >New Zealand</option>
+                                    <option value="CA:NI"  >Nicaragua</option>
+                                    <option value="AF:NE"  >Niger</option>
+                                    <option value="AF:NG"  >Nigeria</option>
+                                    <option value="PA:MP"  >Northern Mariana Islands</option>
+                                    <option value="EU:NO"  >Norway</option>
+                                    <option value="ME:OM"  >Oman</option>
+                                    <option value="SS:PK"  >Pakistan</option>
+                                    <option value="PA:PW"  >Palau</option>
+                                    <option value="CA:PA"  >Panama</option>
+                                    <option value="PA:PG"  >Papua New Guinea</option>
+                                    <option value="SA:PY"  >Paraguay</option>
+                                    <option value="SA:PE"  >Peru</option>
+                                    <option value="SE:PH"  >Philippines</option>
+                                    <option value="EU:PL"  >Poland</option>
+                                    <option value="EU:PT"  >Portugal</option>
+                                    <option value="CA:PR"  >Puerto Rico</option>
+                                    <option value="ME:QA"  >Qatar</option>
+                                    <option value="EU:RO"  >Romania</option>
+                                    <option value="NS:RU"  >Russian Federation</option>
+                                    <option value="AF:RW"  >Rwanda</option>
+                                    <option value="AF:RE"  >R&#233;union</option>
+                                    <option value="CA:KN"  >Saint Kitts and Nevis</option>
+                                    <option value="ME:SA"  >Saudi Arabia</option>
+                                    <option value="AF:SN"  >Senegal</option>
+                                    <option value="EU:RS"  >Serbia</option>
+                                    <option value="AF:SC"  >Seychelles</option>
+                                    <option value="AF:SL"  >Sierra Leone</option>
+                                    <option value="SE:SG"  >Singapore</option>
+                                    <option value="EU:SK"  >Slovakia</option>
+                                    <option value="EU:SI"  >Slovenia</option>
+                                    <option value="PA:SB"  >Solomon Islands</option>
+                                    <option value="AF:ZA"  >South Africa</option>
+                                    <option value="EU:ES"  >Spain</option>
+                                    <option value="SS:LK"  >Sri Lanka</option>
+                                    <option value="AF:SD"  >Sudan</option>
+                                    <option value="SA:SR"  >Suriname</option>
+                                    <option value="AF:SZ"  >Swaziland</option>
+                                    <option value="EU:SE"  >Sweden</option>
+                                    <option value="EU:CH"  >Switzerland</option>
+                                    <option value="ME:SY"  >Syrian Arab Republic</option>
+                                    <option value="ES:TW"  >Taiwan</option>
+                                    <option value="NS:TJ"  >Tajikistan</option>
+                                    <option value="AF:TZ"  >Tanzania</option>
+                                    <option value="SE:TH"  >Thailand</option>
+                                    <option value="AF:TG"  >Togo</option>
+                                    <option value="CA:TT"  >Trinidad and Tobago</option>
+                                    <option value="AF:TN"  >Tunisia</option>
+                                    <option value="ME:TR"  >Turkey</option>
+                                    <option value="AF:UG"  >Uganda</option>
+                                    <option value="NS:UA"  >Ukraine</option>
+                                    <option value="ME:AE"  >United Arab Emirates</option>
+                                    <option value="EU:GB"  >United Kingdom</option>
+                                    <option value="NA:US"  >United States</option>
+                                    <option value="PA:UH"  >United States Minor Outlying Islands</option>
+                                    <option value="SA:UY"  >Uruguay</option>
+                                    <option value="NS:UZ"  >Uzbekistan</option>
+                                    <option value="PA:VU"  >Vanuatu</option>
+                                    <option value="SA:VE"  >Venezuela</option>
+                                    <option value="SE:VN"  >Vietnam</option>
+                                    <option value="CA:VI"  >Virgin Islands (U.S.)</option>
+                                    <option value="ME:YE"  >Yemen</option>
+                                    <option value="AF:ZM"  >Zambia</option>
+                                    <option value="AF:ZW"  >Zimbabwe</option>
+                                </select>
+            <button class="clearFieldIE" type="button" title="Clear the Country field" onclick="$('#Country1').val('');$('#Country1').change();">x</button>
+            </div>
+        </div>
+
+        <div class="w3-row w3-padding-8" title="State name (United States only) for a study trial location" id="StateRow" style="display:none;">
+          <div class="w3-col m3 w3-right-align small-left inputFieldLabel">
+            <label for="State1"><a href="/beta/help/country_state" title="Help for State search field" onclick="openPopupWindowShortWidth('/beta/help/country_state',1000); return false;">State</a>: </label>
+          </div>
+          <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
+            <select id="State1" class="selectInputField" name="state1" tabindex="5" style="width:100%;">
+                            <option value=""  selected="selected"  ></option>
+                            <option value="NA:US:AL"  >Alabama</option>
+                            <option value="NA:US:AK"  >Alaska</option>
+                            <option value="NA:US:AZ"  >Arizona</option>
+                            <option value="NA:US:AR"  >Arkansas</option>
+                            <option value="NA:US:CA"  >California</option>
+                            <option value="NA:US:CO"  >Colorado</option>
+                            <option value="NA:US:CT"  >Connecticut</option>
+                            <option value="NA:US:DE"  >Delaware</option>
+                            <option value="NA:US:DC"  >District of Columbia</option>
+                            <option value="NA:US:FL"  >Florida</option>
+                            <option value="NA:US:GA"  >Georgia</option>
+                            <option value="NA:US:HI"  >Hawaii</option>
+                            <option value="NA:US:ID"  >Idaho</option>
+                            <option value="NA:US:IL"  >Illinois</option>
+                            <option value="NA:US:IN"  >Indiana</option>
+                            <option value="NA:US:IA"  >Iowa</option>
+                            <option value="NA:US:KS"  >Kansas</option>
+                            <option value="NA:US:KY"  >Kentucky</option>
+                            <option value="NA:US:LA"  >Louisiana</option>
+                            <option value="NA:US:ME"  >Maine</option>
+                            <option value="NA:US:MD"  >Maryland</option>
+                            <option value="NA:US:MA"  >Massachusetts</option>
+                            <option value="NA:US:MI"  >Michigan</option>
+                            <option value="NA:US:MN"  >Minnesota</option>
+                            <option value="NA:US:MS"  >Mississippi</option>
+                            <option value="NA:US:MO"  >Missouri</option>
+                            <option value="NA:US:MT"  >Montana</option>
+                            <option value="NA:US:NE"  >Nebraska</option>
+                            <option value="NA:US:NV"  >Nevada</option>
+                            <option value="NA:US:NH"  >New Hampshire</option>
+                            <option value="NA:US:NJ"  >New Jersey</option>
+                            <option value="NA:US:NM"  >New Mexico</option>
+                            <option value="NA:US:NY"  >New York</option>
+                            <option value="NA:US:NC"  >North Carolina</option>
+                            <option value="NA:US:ND"  >North Dakota</option>
+                            <option value="NA:US:OH"  >Ohio</option>
+                            <option value="NA:US:OK"  >Oklahoma</option>
+                            <option value="NA:US:OR"  >Oregon</option>
+                            <option value="NA:US:PA"  >Pennsylvania</option>
+                            <option value="NA:US:RI"  >Rhode Island</option>
+                            <option value="NA:US:SC"  >South Carolina</option>
+                            <option value="NA:US:SD"  >South Dakota</option>
+                            <option value="NA:US:TN"  >Tennessee</option>
+                            <option value="NA:US:TX"  >Texas</option>
+                            <option value="NA:US:UT"  >Utah</option>
+                            <option value="NA:US:VT"  >Vermont</option>
+                            <option value="NA:US:VA"  >Virginia</option>
+                            <option value="NA:US:WA"  >Washington</option>
+                            <option value="NA:US:WV"  >West Virginia</option>
+                            <option value="NA:US:WI"  >Wisconsin</option>
+                            <option value="NA:US:WY"  >Wyoming</option>
+                          </select>
+            <button class="clearFieldIE" type="button" title="Clear the State field" onclick="$('#State1').val('');$('#State1').change();">x</button>
+          </div>
+        </div>
+
+        <div class="w3-row w3-padding-8" title="Perform a search">
+          <div class="w3-col w3-center" style="padding:1.5ex 1em;">
+            <input name="SearchRecruiting" id="SearchRecruiting" value="Find a study to participate in" type="submit" class="searchButton"
+              tabindex="6"
+              title="Search for currently recruiting studies using the above fields"/>
+            <input name="SearchAll" value="Search all studies" type="submit" class="searchButton searchButtonAlternate"
+                tabindex="7"
+              title="Search all studies using the above fields"/>
+            <a href="javascript:gotoAdvSearchURL();" title="Go to the Advanced Search page" tabindex="8"
+              style="white-space:nowrap;margin-top:1ex;font-size:larger;">Advanced Search</a>
+          </div>
+        </div>
+                <input name="recrs" id="RecruitingStudies" type="hidden"/>
+
+      </fieldset>
+        </form>
+
+
+    <div class="w3-row w3-padding-8">
+      <div class="w3-col w3-center" id="search-extras">
+      <ul>
+        <li                   ><a href="/beta/help/how-find/basic"   >Help</a></li>
+        <li                   ><a href="/beta/search/browse?brwse=cond_cat"><span style="white-space:nowrap;">Studies by Topic</span></a></li>
+        <li                   ><a href="/beta/search/map"        ><span style="white-space:nowrap;">Studies on Map</span></a></li>
+        <li class="last-item" ><a href="/beta/about-studies/glossary"        >Glossary</a></li>
+      </ul>
+      </div>
+    </div>
+
+
+<div id="workingDim" class="dim" style="display:none;">
+  <div id="workingIndicator" class="workingBox" style="text-align:center;vertical-align:middle;">
+    <img alt="Working..." src="/beta/html/ct3/images/working.gif" height="48" >
+  </div>
+</div>
+
+<script type="text/javascript" src="/beta/html/ct3/js/working.js"></script><noscript></noscript>
+
+    </div>
+    <div id="home-recruiting-locations" class="w3-col l4">
+      <div class="w3-container" style="margin:auto;">
+      <div id="trial-count">
+    <p>The database currently lists <span class="highlight">246,355 studies</span> with locations in all 50 States and in <span class="highlight">200 countries</span>.</p>
+</div>
+
+    </div>
+    <div class="w3-container w3-center w3-hide-small" id="graph">
+      <h2 class="home-sidebar-heading" style="display:block;text-align:center;margin:4px;">Recruiting Study Locations</h2>
+      <div class="w3-container w3-center" style="display:inline-flex;">
+                <table class="w3-table" id="homepie" style="width:100%;">
+              <caption style="display:none">Legend for Recruiting Study location pie chart image</caption>
+              <thead>
+                  <tr style="display:none">
+                    <th scope="col">Pie Chart<th>
+                    <th scope="col">Pie Color</th>
+                    <th scope="col">Location</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="4" style="vertical-align:middle;">
+                <img
+                src="{{ site.currenturl }}/beta/resources/trends/location-count-recruit-pie-sm"
+                alt="Recruiting Study Location Count Pie Chart" />
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+                                                <tr>
+                        <td><img style="margin:0 0;width:10px;height:16px;" src="{{ site.currenturl }}/beta/html/ct3/images/D86E80.png" alt="color"/></td>
+                        <td class="w3-left-align">Non-U.S. only (56%)</td>
+                </tr>
+                                                                    <tr>
+                        <td><img style="margin:0 0;width:10px;height:16px;" src="{{ site.currenturl }}/beta/html/ct3/images/8374B0.png" alt="color"/></td>
+                        <td class="w3-left-align">U.S. only (38%)</td>
+                </tr>
+                                                                    <tr>
+                        <td><img style="margin:0 0;width:10px;height:16px;" src="{{ site.currenturl }}/beta/html/ct3/images/ECB85C.png" alt="color"/></td>
+                        <td class="w3-left-align">Both U.S. and non-U.S. (5%)</td>
+                </tr>
+                                                                                </tbody>
+            </table>
+      </div>
+      <div id="pielegend" class="w3-hide-small" style="text-align:center;margin-bottom:6px;">42,802 recruiting studies (June 04, 2017)</div>
+    </div>
+
+      <hr style="margin-left:12px;">
+  <h3 class="w3-center home-sidebar-heading">More Information</h3>
+  <div class="w3-container w3-center">
+    <div class="w3-row"
+      style="border:1px solid lightgrey;margin:0.5ex auto;padding:0.5rem;background-color:#ecf2f8;white-space:nowrap;text-align:left;max-width: 22.5rem;">
+      <a href="/beta/help/for-patient" title="Additional information for patients and families">For Patients and Families</a>
+    </div>
+    <div class="w3-row"
+      style="border:1px solid lightgrey;margin:0.5ex auto;padding:0.5rem;background-color:#ecf2f8;white-space:nowrap;text-align:left;max-width: 22.5rem;">
+<a href="/beta/help/for-researcher" title="Additional information for researchers" style="margin-right:2em;white-space:nowrap;">For Researchers</a>
+    </div>
+    <div class="w3-row"
+      style="border:1px solid lightgrey;margin:0.5ex auto;padding:0.5rem;background-color:#ecf2f8;white-space:nowrap;text-align:left;max-width: 22.5rem;">
+<a href="/beta/help/for-manager" title="Additional information for study record managers" style="white-space:nowrap;">For Study Record Managers</a>
+    </div>
+  </div>
+    </div>
+</div>
+
+
+<div id="footer-menu">
+    <ul class="horz-list">
+    <li><a href="/beta/home" style="white-space:nowrap">Home</a></li>
+    <li><a     href="/beta/resources/rss" style="white-space:nowrap">RSS Feeds</a></li>
+    <li><a         href="/beta/sitemap" style="white-space:nowrap">Site Map</a></li>
+    <li><a       href="/beta/about-site/terms-conditions" style="white-space:nowrap">Terms and Conditions</a></li>
+    <li><a href="/beta/about-site/disclaimer" style="white-space:nowrap">Disclaimer</a></li>
+    <li><a        href="https://support.nlm.nih.gov/ics/support/KBList.asp?folderID=146?style=classic&amp;deptID=28054&amp;category=clinicaltrials.gov&amp;hd_url=https%3A%2F%2Fclinicaltrials.gov%2Fbeta%2Fhome" style="white-space:nowrap" onclick="openNewWindow('https://support.nlm.nih.gov/ics/support/KBList.asp?folderID=146?style=classic&amp;deptID=28054&amp;category=clinicaltrials.gov&amp;hd_url=https%3A%2F%2Fclinicaltrials.gov%2Fbeta%2Fhome'); return false">Customer Support</a></li>
+  </ul>
+</div>
+
+</div>
+<div id="fine-print">
+  <ul class="horz-list">
+    <li                  ><a title="NLM copyright information - opens new window"  href="https://www.nlm.nih.gov/copyright.html" onclick="openNewWindow('https://www.nlm.nih.gov/copyright.html'); return false"
+>Copyright</a></li>
+    <li                  ><a title="NLM privacy policy - opens new window"  href="https://www.nlm.nih.gov/privacy.html" onclick="openNewWindow('https://www.nlm.nih.gov/privacy.html'); return false"
+>Privacy</a></li>
+    <li                  ><a title="NLM accessibility - opens new window"  href="https://www.nlm.nih.gov/accessibility.html" onclick="openNewWindow('https://www.nlm.nih.gov/accessibility.html'); return false"
+>Accessibility</a></li>
+    <li                  ><a title="NLM viewers and players - opens new window"  href="https://www.nlm.nih.gov/plugins.html" onclick="openNewWindow('https://www.nlm.nih.gov/plugins.html'); return false"
+>Viewers and Players</a></li>
+    <li                  ><a title="NIH Freedom of Information Act office - opens new window"  href="https://www.nih.gov/icd/od/foia/index.htm" onclick="openNewWindow('https://www.nih.gov/icd/od/foia/index.htm'); return false"
+>Freedom of Information Act</a></li>
+    <li class="last-item"><a title="USA.gov - opens new window"  href="https://www.usa.gov/" onclick="openNewWindow('https://www.usa.gov/'); return false"
+>USA.gov</a></li>
+  </ul>
+    <ul class="horz-list">
+       <li><a title="U.S. National Library of Medicine - opens new window"  href="https://www.nlm.nih.gov/" onclick="openNewWindow('https://www.nlm.nih.gov/'); return false"
+>U.S. National Library of Medicine</a></li>
+       <li><a title="U.S. National Institutes of Health - opens new window"  href="https://www.nih.gov/" onclick="openNewWindow('https://www.nih.gov/'); return false"
+>U.S. National Institutes of Health</a></li>
+       <li class="last-item"><a title="U.S. Department of Health and Human Services - opens new window"  href="https://www.hhs.gov/" onclick="openNewWindow('https://www.hhs.gov/'); return false"
+>
+            U.S. Department of Health and Human Services</a></li>
+    </ul>
+</div>
+
+    <script type="text/javascript" src="/beta/html/ct3/js/instrumentNCBIBaseJS.min.js"></script><noscript></noscript>
+
+</body>
+</html>
