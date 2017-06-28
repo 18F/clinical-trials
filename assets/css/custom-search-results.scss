@@ -40,25 +40,38 @@ body {
 .tooltip {
   display: inline-block;
   position: absolute;
-  margin-left: 5px;
+  margin-left: -44px;
 
   // Show the tooltip text when you mouse over the tooltip container
-  &:hover,
-  &:focus {
-     .tooltip-text {
-      opacity: 1;
-    }
-  }
+  // &:hover,
+  // &:focus {
+  //    .tooltip-text {
+  //     opacity: 1;
+  //   }
+  // }
 
   .usa-label {
-    cursor: default;
-    font-size: 13px;
 
+    &:hover,
     &:focus {
       .tooltip-text {
         opacity: 1;
       }
     }
+  }
+}
+
+.dataTable {
+  .usa-label {
+    cursor: default;
+    font-size: 13px;
+  }
+}
+
+.label-tooltip:focus,
+.label-tooltip:hover {
+  + .tooltip .tooltip-text {
+    opacity: 1;
   }
 }
 
