@@ -68,15 +68,18 @@ body {
   }
 }
 
-.label-tooltip:focus,
-.label-tooltip:hover {
-  + .tooltip .tooltip-text {
-    opacity: 1;
+.label-tooltip {
+  &:focus,
+  &:hover {
+    + .tooltip .tooltip-text {
+      opacity: 1;
+    }
   }
 }
 
 .tooltip-text {
-  // display: none;
+  display: none;
+
   @include media($medium-screen) {
     @include margin(0 null 6px null);
     background-color: $color-gray-dark;
