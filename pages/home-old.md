@@ -1,4 +1,4 @@
 ---
 layout: home-old
-permalink: /
+permalink: /home-old/
 ---
