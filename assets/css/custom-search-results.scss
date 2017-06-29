@@ -68,7 +68,7 @@ body {
   }
 }
 
-.label-tooltip {
+.tooltip-label {
   &:focus,
   &:hover {
     + .tooltip .tooltip-text {
