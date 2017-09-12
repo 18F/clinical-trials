@@ -1,4 +1,17 @@
-// Typography
+// Mixins --------- //
+
+@mixin clip-margins {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Typography --------- //
+
 p {
   font-size: 1.7rem;
 }
@@ -13,17 +26,33 @@ a {
   }
 }
 
-// Grid
+// Grid --------- //
+
 div.inner_wrapper {
   margin: 0 auto;
-  padding: 0 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
-  @media screen and (min-width: 600px) {
-    padding: 0 3rem;
+  @include media($medium-screen) {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
-// Navigation
+// Layout --------- //
+
+.usa-section {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+
+  @include media($medium-screen) {
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+  }
+}
+
+// Navigation --------- //
+
 .header.header {
   padding-bottom: 14px;
   padding-top: 14px;
@@ -42,27 +71,49 @@ div.inner_wrapper {
   }
 }
 
+// Hero --------- //
 
-// Hero
 .welcome-wrapper {
   background-color: $color-primary-darker;
   margin: 0.125in 0;
-  padding: 5rem 0;
+  padding: 4.5rem 0;
 }
 
 .welcome {
   font-weight: $font-bold;
+  font-size: 20px;
   max-width: 50ch;
 }
 
-// Info callouts
+// Info callouts --------- //
+
 .info-callouts {
+  @include media($medium-screen) {
+    @include padding(3.5rem null);
+  }
+
+  > div {
+    @include media($medium-screen) {
+      @include clip-margins;
+    }
+  }
+
+  .for-box {
+    padding-left: 0;
+
+    &:not(last-child) {
+      @include media($medium-screen) {
+        padding-right: 30px;
+      }
+    }
+  }
+
   h2 {
     font-size: $h4-font-size;
   }
 }
 
-//Footer
+// Footer --------- //
 
 #footer-menu {
   padding-bottom: 10px;

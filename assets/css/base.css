@@ -220,7 +220,7 @@ legend > span {
 div.inner_wrapper
 {
     margin:8px auto;
-    padding: 14px 8px;
+    /*padding: 14px 8px;*/
     max-width: 1200px;
     box-sizing: border-box;
 }
