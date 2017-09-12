@@ -13,7 +13,22 @@ a {
   }
 }
 
+// Grid
+div.inner_wrapper {
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media screen and (min-width: 600px) {
+    padding: 0 3rem;
+  }
+}
+
 // Navigation
+.header.header {
+  padding-bottom: 14px;
+  padding-top: 14px;
+}
+
 .nih-logo {
   font-family: $helvetica;
   font-weight: 500;
@@ -32,7 +47,7 @@ a {
 .welcome-wrapper {
   background-color: $color-primary-darker;
   margin: 0.125in 0;
-  padding: 0.25in;
+  padding: 5rem 0;
 }
 
 .welcome {
