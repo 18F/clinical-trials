@@ -11,26 +11,26 @@ $image-path: '../uswds/img';
 // TODO: use USWDS selectively
 // @import "lib/uswds/all";
 
-// Vendor -------------- //
+// // Vendor -------------- //
 @import 'lib/uswds/lib/bourbon';
-@import 'lib/uswds/lib/neat';
-@import 'lib/uswds/lib/normalize';
+// @import 'lib/uswds/lib/neat';
+// @import 'lib/uswds/lib/normalize';
 
-// Core -------------- //
+// // Core -------------- //
 @import 'lib/uswds/core/variables';
-@import 'lib/uswds/core/fonts';
-@import 'lib/uswds/core/base';
-@import 'lib/uswds/core/grid';
-@import 'lib/uswds/core/utilities';
+// @import 'lib/uswds/core/fonts';
+// @import 'lib/uswds/core/base';
+// @import 'lib/uswds/core/grid';
+// @import 'lib/uswds/core/utilities';
 
-// Elements -------------- //
-@import "lib/uswds/elements/buttons";
-@import "lib/uswds/elements/inputs";
-@import "lib/uswds/elements/list";
-@import "lib/uswds/elements/typography";
+// // Elements -------------- //
+// @import "lib/uswds/elements/buttons";
+// @import "lib/uswds/elements/inputs";
+// @import "lib/uswds/elements/list";
+// @import "lib/uswds/elements/typography";
 
-// Components -------------- //
-@import "lib/uswds/components/forms";
+// // Components -------------- //
+// @import "lib/uswds/components/forms";
 
 // Custom styles -------------- //
 @import "all";

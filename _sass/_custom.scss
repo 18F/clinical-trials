@@ -1,136 +1,48 @@
-// body {
-//   background-color: $color-primary-darker;
-// }
-
-// .leave-beta-site {
-//   display: inline-block;
-//   font-weight: bold;
-//   background-color: #ffffaa;
-// }
-
-// form [type=submit] {
-//   display: initial;
-// }
-
-// .w3-table {
-//   margin-bottom: 0;
-//   margin-top: 1rem;
-
-//   th, td {
-//     border: none;
-//   }
-// }
-
-// .form-search {
-//   label {
-//     margin-top: 13px;
-//   }
-// }
-
-// // Alignment fix on select box clear
-// button.clearFieldIE {
-//   margin-bottom: 4px;
-//   margin-top: 3px;
-// }
-
-
-// body, p, td, tr, input, select, textarea, li, legend, div {
-//   font: inherit;
-// }
-
-// Returns background color to blue
-body {
-  background: #205493;
+// Typography
+p {
+  font-size: 1.7rem;
 }
 
 a {
   border-bottom: none;
+  color: $color-primary;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-primary-darker;
+  }
 }
 
-label {
-  font-size: $base-font-size;
+// Navigation
+.nih-logo {
+  font-family: $helvetica;
+  font-weight: 500;
+}
+
+.sf-menu a {
+  color: $color-gray;
+
+  &:hover {
+    color: $color-base;
+  }
+}
+
+
+// Hero
+.welcome-wrapper {
+  background-color: $color-primary-darker;
+  margin: 0.125in 0;
+  padding: 0.25in;
 }
 
 .welcome {
-  font-weight: $font-normal;
-  margin-bottom: 3rem;
+  font-weight: $font-bold;
+  max-width: 50ch;
 }
 
-// Rename heading
-.welcome-heading {
-  background: #205493;
-  color: white;
-  font-size: x-large;
-  font-weight: $font-normal;
-  margin: 0.125in 0;
-}
-
-
-.legend-study-status {
-  font-size: $base-font-size;
-  font-weight: $font-normal;
-  margin-bottom: 0.2em;
-  padding-top: 3rem;
-}
-
-// Hide clearField from view (also removed via JS b/c was being dynamically added)
-button.clearFieldIE {
-  display: none;
-}
-
-// Display straight corners and no up and down arrows
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  select {
-    -webkit-appearance: none !important;
+// Info callouts
+.info-callouts {
+  h2 {
+    font-size: $h4-font-size;
   }
-}
-
-// Can also remove this div
-div.inputFieldLabel {
-  font-weight: $font-normal;
-  padding-top: 0;
-}
-
-select {
-  line-height: 1.3 !important;
-  padding: 1rem 0.7em;
-}
-
-.search-legend {
-  font-family: $georgia;
-  font-weight: $font-normal;
-  font-size: 2.4rem;
-}
-
-.fieldset-search {
-  border: none;
-  margin: 0;
-  padding-left: 0.25in;
-}
-
-.usa-fieldset-inputs {
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-input.searchButton {
-  border: inherit;
-  border-radius: $border-radius;
-  display: inline-block;
-  margin-right: 1.5em;
-
-  &:hover {
-    background-color: $color-primary-darker;
-  }
-}
-
-.searchButton {
-  @include padding(1.3rem 2.7em);
-  margin-right: 1.5em;
-}
-
-.home-sidebar-heading {
-  font-size: 14px;
-  font-family: $font-sans;
 }

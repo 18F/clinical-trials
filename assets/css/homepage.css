@@ -26,6 +26,7 @@ h2 + p
 #main-content
 {
     clear: both;
+    padding: 0;
   margin-bottom:2px;
 }
 
@@ -46,7 +47,7 @@ h2 + p
 }
 #trial-count .highlight
 {
-    color: #990000;
+/*    color: #990000; */
 }
 
 #primary-box
@@ -259,4 +260,52 @@ input.searchButtonAlternate
 .w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th
 {
     padding: 2px;
+}
+
+/* From 18F prototype */
+/* From uswds.css */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  line-height: 1.3;
+  margin-bottom: .5em;
+  margin-top: 1.5em; }
+
+p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+html {
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.7rem;
+}
+
+#trial-count h2
+{
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+/*
+#trial-count > *
+{
+    max-width: 338px;
+}
+*/
+
+.trial-info
+{
+    max-width: 338px;
+    font-size: 1.7rem;
 }
