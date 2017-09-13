@@ -2,16 +2,17 @@
 ---
 $output-bourbon-deprecation-warnings: false !default;
 
-// Vendor -------------- //
+// // Vendor -------------- //
 @import 'lib/uswds/lib/bourbon';
 @import 'lib/uswds/lib/neat';
-@import 'lib/uswds/lib/normalize';
 
+// // Core -------------- //
 @import 'lib/uswds/core/variables';
 @import "lib/uswds/elements/labels";
 
+@import "custom-global";
+
 html {
-  font-family: $font-sans;
   font-size: $em-base;
 }
 
@@ -19,20 +20,33 @@ body {
   font-size: $base-font-size;
 }
 
-.search-term-highlight {
-  font-weight: bold;
+// .search-term-highlight {
+//   font-weight: bold;
+// }
+
+// .results-summary {
+//   text-align: center;
+// }
+
+// .search-sort {
+//   float: right;
+//   margin-bottom: 10px;
+//   margin-top: 6px;
+// }
+
+
+div#breadcrumb {
+  @include grid-padding;
+  margin: 0 auto;
 }
 
-.results-summary {
-  text-align: center;
+div.outer_breadcrumb {
+  @include padding(9px null);
 }
 
-.search-sort {
-  float: right;
-  margin-bottom: 10px;
-  margin-top: 6px;
+#breadcrumb ul li.last h1 {
+  font-family: $font-sans;
 }
-
 
 // Custom tooltip styles -------------- //
 
@@ -109,3 +123,5 @@ body {
     }
   }
 }
+
+
