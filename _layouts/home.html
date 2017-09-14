@@ -282,7 +282,7 @@ class="w3-hide-small">
 </div>
 <div style="clear:right;"></div>
 </div>
-<div class="w3-hide-small welcome-wrapper">
+<div class="welcome-wrapper">
   <div class="inner_wrapper">
     <h1 class="welcome" style="padding:0;line-height:1.5;margin:0;">
   ClinicalTrials.gov is a database of privately and publicly funded clinical studies conducted around the world.
@@ -290,14 +290,8 @@ class="w3-hide-small">
   </div>
 </div>
 
-<div class="w3-row">
-    <div id="tools-data" class="w3-container w3-hide-medium w3-hide-large" style="padding:1ex 0.125in;background:#205493;color:white">
-  ClinicalTrials.gov is a registry and results database of publicly and privately supported clinical studies of human participants conducted around the world.
-</div>
-</div>
-
 <div id="main-content" class="w3-row">
-  <div class="inner_wrapper">
+  <div class="inner_wrapper home-main-content">
       <div id="home-recruiting-locations" class="w3-col l5">
         <div class="trial-info">
         <div id="trial-count">
@@ -355,302 +349,319 @@ $(document).ready(function() {
 
 
     <form method="get" action="/ct2/results" onsubmit="sendSearchPing();">
-      <fieldset class="w3-container" style="margin-top:6px;border:1px solid lightgrey;background-color:#f6f6f6;" title="All fields optional">
-        <legend style="background-color:white;"><span>Find a study <span>(all fields are optional)</span></span></legend>
-        <div title="Name of a Disease  or Medical Condition. Known synonyms automatically included">
-          <label for="home-search-condition-query">Condition or disease</label>
-          <span class="usa-form-hint">For example: cancer, oxytoine, or radiation</span>
-          <div>
-            <input id="home-search-condition-query" class="textInputField" name="cond" tabindex="1" maxlength="250" type="text">
-              <div style="display:none" id="home-search-condition-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
-              <script type="text/javascript"> new ExtensionsMgr("home-search-condition-query","home-search-condition-ExtensionsId",null,"/ct2/rpc/extend/cond"); </script><noscript></noscript>
-          </div>
-        </div>
-        <div title="Other terms such as an NCT number, drug name, investigator name">
-            <label for="home-search-other-query">Additional search terms</label>
-            <span class="usa-form-hint">For example: NCT number, drug name, or investigator name</span>
+      <fieldset title="All fields optional">
+        <legend class="search-legend"><span>Find a study <span>(all fields are optional)</span></span></legend>
+        <fieldset class="usa-fieldset-inputs usa-fieldset-tabs">
+          <legend class="usa-sr-only">Study Status</legend>
+          <ul class="usa-unstyled-list">
+            <li>
+              <input id="study-recruiting" type="radio" checked name="study-status" value="recruiting">
+              <label class="label-radio" for="study-recruiting">Seeking participants</label>
+            </li>
+            <li>
+              <input id="study-with-results" type="radio" name="study-status" value="all-studies">
+              <label class="label-radio" for="study-with-results">With results posted</label>
+            </li>
+            <li>
+              <input id="study-all" type="radio" name="study-status" value="all-studies">
+              <label class="label-radio" for="study-all">Show all studies</label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="form-search-home-inner">
+          <div title="Name of a Disease  or Medical Condition. Known synonyms automatically included">
+            <label for="home-search-condition-query">Condition or disease</label>
+            <span class="usa-form-hint">For example: cancer, oxytoine, or radiation</span>
             <div>
-                <input id="home-search-other-query" class="textInputField" name="term" tabindex="2" maxlength="250" type="text">
-          </div>
-        </div>
-
-        <div title="Country with at least one study trial location">
-          <label for="Country1">Country</label>
-          <div>
-                <select id="Country1" class="selectInputField" name="cntry1" tabindex="3" style="width:100%;">
-                                  <option value=""  selected="selected"  ></option>
-                                    <option value="NA:US"  >United States</option>
-                                    <option value="SS:AF"  >Afghanistan</option>
-                                    <option value="EU:AL"  >Albania</option>
-                                    <option value="AF:DZ"  >Algeria</option>
-                                    <option value="PA:AS"  >American Samoa</option>
-                                    <option value="EU:AD"  >Andorra</option>
-                                    <option value="AF:AO"  >Angola</option>
-                                    <option value="SA:AR"  >Argentina</option>
-                                    <option value="NS:AM"  >Armenia</option>
-                                    <option value="CA:AW"  >Aruba</option>
-                                    <option value="PA:AU"  >Australia</option>
-                                    <option value="EU:AT"  >Austria</option>
-                                    <option value="NS:AZ"  >Azerbaijan</option>
-                                    <option value="CA:BS"  >Bahamas</option>
-                                    <option value="ME:BH"  >Bahrain</option>
-                                    <option value="SS:BD"  >Bangladesh</option>
-                                    <option value="CA:BB"  >Barbados</option>
-                                    <option value="NS:BY"  >Belarus</option>
-                                    <option value="EU:BE"  >Belgium</option>
-                                    <option value="CA:BZ"  >Belize</option>
-                                    <option value="AF:BJ"  >Benin</option>
-                                    <option value="CA:BM"  >Bermuda</option>
-                                    <option value="SS:BT"  >Bhutan</option>
-                                    <option value="SA:BO"  >Bolivia</option>
-                                    <option value="EU:BA"  >Bosnia and Herzegovina</option>
-                                    <option value="AF:BW"  >Botswana</option>
-                                    <option value="SA:BR"  >Brazil</option>
-                                    <option value="SE:BN"  >Brunei Darussalam</option>
-                                    <option value="EU:BG"  >Bulgaria</option>
-                                    <option value="AF:BF"  >Burkina Faso</option>
-                                    <option value="AF:BI"  >Burundi</option>
-                                    <option value="SE:KH"  >Cambodia</option>
-                                    <option value="AF:CM"  >Cameroon</option>
-                                    <option value="NA:CA"  >Canada</option>
-                                    <option value="CA:KY"  >Cayman Islands</option>
-                                    <option value="AF:CF"  >Central African Republic</option>
-                                    <option value="AF:TD"  >Chad</option>
-                                    <option value="SA:CL"  >Chile</option>
-                                    <option value="ES:CN"  >China</option>
-                                    <option value="SA:CO"  >Colombia</option>
-                                    <option value="AF:CG"  >Congo</option>
-                                    <option value="AF:CD"  >Congo, The Democratic Republic of the</option>
-                                    <option value="CA:CR"  >Costa Rica</option>
-                                    <option value="EU:HR"  >Croatia</option>
-                                    <option value="CA:CU"  >Cuba</option>
-                                    <option value="ME:CY"  >Cyprus</option>
-                                    <option value="EU:CZ"  >Czech Republic</option>
-                                    <option value="AF:CI"  >C&#244;te D&apos;Ivoire</option>
-                                    <option value="EU:DK"  >Denmark</option>
-                                    <option value="AF:DJ"  >Djibouti</option>
-                                    <option value="CA:DO"  >Dominican Republic</option>
-                                    <option value="SA:EC"  >Ecuador</option>
-                                    <option value="AF:EG"  >Egypt</option>
-                                    <option value="CA:SV"  >El Salvador</option>
-                                    <option value="AF:GQ"  >Equatorial Guinea</option>
-                                    <option value="EU:EE"  >Estonia</option>
-                                    <option value="AF:ET"  >Ethiopia</option>
-                                    <option value="PA:FJ"  >Fiji</option>
-                                    <option value="EU:FI"  >Finland</option>
-                                    <option value="EU:CS"  >Former Serbia and Montenegro</option>
-                                    <option value="EU:YU"  >Former Yugoslavia</option>
-                                    <option value="EU:FR"  >France</option>
-                                    <option value="PA:PF"  >French Polynesia</option>
-                                    <option value="AF:GA"  >Gabon</option>
-                                    <option value="AF:GM"  >Gambia</option>
-                                    <option value="NS:GE"  >Georgia</option>
-                                    <option value="EU:DE"  >Germany</option>
-                                    <option value="AF:GH"  >Ghana</option>
-                                    <option value="EU:GI"  >Gibraltar</option>
-                                    <option value="EU:GR"  >Greece</option>
-                                    <option value="NA:GL"  >Greenland</option>
-                                    <option value="CA:GD"  >Grenada</option>
-                                    <option value="CA:GP"  >Guadeloupe</option>
-                                    <option value="PA:GU"  >Guam</option>
-                                    <option value="CA:GT"  >Guatemala</option>
-                                    <option value="AF:GN"  >Guinea</option>
-                                    <option value="AF:GW"  >Guinea-Bissau</option>
-                                    <option value="SA:GY"  >Guyana</option>
-                                    <option value="CA:HT"  >Haiti</option>
-                                    <option value="EU:VA"  >Holy See (Vatican City State)</option>
-                                    <option value="CA:HN"  >Honduras</option>
-                                    <option value="ES:HK"  >Hong Kong</option>
-                                    <option value="EU:HU"  >Hungary</option>
-                                    <option value="EU:IS"  >Iceland</option>
-                                    <option value="SS:IN"  >India</option>
-                                    <option value="SE:ID"  >Indonesia</option>
-                                    <option value="ME:IR"  >Iran, Islamic Republic of</option>
-                                    <option value="ME:IQ"  >Iraq</option>
-                                    <option value="EU:IE"  >Ireland</option>
-                                    <option value="ME:IL"  >Israel</option>
-                                    <option value="EU:IT"  >Italy</option>
-                                    <option value="CA:JM"  >Jamaica</option>
-                                    <option value="ES:JP"  >Japan</option>
-                                    <option value="ME:JO"  >Jordan</option>
-                                    <option value="NS:KZ"  >Kazakhstan</option>
-                                    <option value="AF:KE"  >Kenya</option>
-                                    <option value="ES:KP"  >Korea, Democratic People&apos;s Republic of</option>
-                                    <option value="ES:KR"  >Korea, Republic of</option>
-                                    <option value="ME:KW"  >Kuwait</option>
-                                    <option value="NS:KG"  >Kyrgyzstan</option>
-                                    <option value="SE:LA"  >Lao People&apos;s Democratic Republic</option>
-                                    <option value="EU:LV"  >Latvia</option>
-                                    <option value="ME:LB"  >Lebanon</option>
-                                    <option value="AF:LS"  >Lesotho</option>
-                                    <option value="AF:LR"  >Liberia</option>
-                                    <option value="AF:LY"  >Libyan Arab Jamahiriya</option>
-                                    <option value="EU:LT"  >Lithuania</option>
-                                    <option value="EU:LU"  >Luxembourg</option>
-                                    <option value="EU:MK"  >Macedonia, The Former Yugoslav Republic of</option>
-                                    <option value="AF:MG"  >Madagascar</option>
-                                    <option value="AF:MW"  >Malawi</option>
-                                    <option value="SE:MY"  >Malaysia</option>
-                                    <option value="AF:ML"  >Mali</option>
-                                    <option value="EU:MT"  >Malta</option>
-                                    <option value="CA:MQ"  >Martinique</option>
-                                    <option value="AF:MR"  >Mauritania</option>
-                                    <option value="AF:MU"  >Mauritius</option>
-                                    <option value="NA:MX"  >Mexico</option>
-                                    <option value="NS:MD"  >Moldova, Republic of</option>
-                                    <option value="EU:MC"  >Monaco</option>
-                                    <option value="ES:MN"  >Mongolia</option>
-                                    <option value="EU:ME"  >Montenegro</option>
-                                    <option value="CA:MS"  >Montserrat</option>
-                                    <option value="AF:MA"  >Morocco</option>
-                                    <option value="AF:MZ"  >Mozambique</option>
-                                    <option value="SE:MM"  >Myanmar</option>
-                                    <option value="AF:NA"  >Namibia</option>
-                                    <option value="SS:NP"  >Nepal</option>
-                                    <option value="EU:NL"  >Netherlands</option>
-                                    <option value="EU:AN"  >Netherlands Antilles</option>
-                                    <option value="PA:NC"  >New Caledonia</option>
-                                    <option value="PA:NZ"  >New Zealand</option>
-                                    <option value="CA:NI"  >Nicaragua</option>
-                                    <option value="AF:NE"  >Niger</option>
-                                    <option value="AF:NG"  >Nigeria</option>
-                                    <option value="PA:MP"  >Northern Mariana Islands</option>
-                                    <option value="EU:NO"  >Norway</option>
-                                    <option value="ME:OM"  >Oman</option>
-                                    <option value="SS:PK"  >Pakistan</option>
-                                    <option value="CA:PA"  >Panama</option>
-                                    <option value="PA:PG"  >Papua New Guinea</option>
-                                    <option value="SA:PY"  >Paraguay</option>
-                                    <option value="SA:PE"  >Peru</option>
-                                    <option value="SE:PH"  >Philippines</option>
-                                    <option value="EU:PL"  >Poland</option>
-                                    <option value="EU:PT"  >Portugal</option>
-                                    <option value="CA:PR"  >Puerto Rico</option>
-                                    <option value="ME:QA"  >Qatar</option>
-                                    <option value="EU:RO"  >Romania</option>
-                                    <option value="NS:RU"  >Russian Federation</option>
-                                    <option value="AF:RW"  >Rwanda</option>
-                                    <option value="AF:RE"  >R&#233;union</option>
-                                    <option value="CA:KN"  >Saint Kitts and Nevis</option>
-                                    <option value="ME:SA"  >Saudi Arabia</option>
-                                    <option value="AF:SN"  >Senegal</option>
-                                    <option value="EU:RS"  >Serbia</option>
-                                    <option value="AF:SC"  >Seychelles</option>
-                                    <option value="AF:SL"  >Sierra Leone</option>
-                                    <option value="SE:SG"  >Singapore</option>
-                                    <option value="EU:SK"  >Slovakia</option>
-                                    <option value="EU:SI"  >Slovenia</option>
-                                    <option value="PA:SB"  >Solomon Islands</option>
-                                    <option value="AF:ZA"  >South Africa</option>
-                                    <option value="EU:ES"  >Spain</option>
-                                    <option value="SS:LK"  >Sri Lanka</option>
-                                    <option value="AF:SD"  >Sudan</option>
-                                    <option value="SA:SR"  >Suriname</option>
-                                    <option value="AF:SZ"  >Swaziland</option>
-                                    <option value="EU:SE"  >Sweden</option>
-                                    <option value="EU:CH"  >Switzerland</option>
-                                    <option value="ME:SY"  >Syrian Arab Republic</option>
-                                    <option value="ES:TW"  >Taiwan</option>
-                                    <option value="NS:TJ"  >Tajikistan</option>
-                                    <option value="AF:TZ"  >Tanzania</option>
-                                    <option value="SE:TH"  >Thailand</option>
-                                    <option value="AF:TG"  >Togo</option>
-                                    <option value="CA:TT"  >Trinidad and Tobago</option>
-                                    <option value="AF:TN"  >Tunisia</option>
-                                    <option value="ME:TR"  >Turkey</option>
-                                    <option value="AF:UG"  >Uganda</option>
-                                    <option value="NS:UA"  >Ukraine</option>
-                                    <option value="ME:AE"  >United Arab Emirates</option>
-                                    <option value="EU:GB"  >United Kingdom</option>
-                                    <option value="NA:US"  >United States</option>
-                                    <option value="SA:UY"  >Uruguay</option>
-                                    <option value="NS:UZ"  >Uzbekistan</option>
-                                    <option value="PA:VU"  >Vanuatu</option>
-                                    <option value="SA:VE"  >Venezuela</option>
-                                    <option value="SE:VN"  >Vietnam</option>
-                                    <option value="CA:VI"  >Virgin Islands (U.S.)</option>
-                                    <option value="ME:YE"  >Yemen</option>
-                                    <option value="AF:ZM"  >Zambia</option>
-                                    <option value="AF:ZW"  >Zimbabwe</option>
-                                </select>
+              <input id="home-search-condition-query" class="textInputField" name="cond" maxlength="250" type="text">
+                <div style="display:none" id="home-search-condition-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
+                <script type="text/javascript"> new ExtensionsMgr("home-search-condition-query","home-search-condition-ExtensionsId",null,"/ct2/rpc/extend/cond"); </script><noscript></noscript>
             </div>
-        </div>
-
-        <div title="State name (United States only) for a study trial location" id="StateRow" style="display:none;">
-          <label for="State1">State</label>
-          <div>
-              <select id="State1" class="selectInputField" name="state1" tabindex="4" style="width:100%;">
-                            <option value=""  selected="selected"  ></option>
-                            <option value="NA:US:AL"  >Alabama</option>
-                            <option value="NA:US:AK"  >Alaska</option>
-                            <option value="NA:US:AZ"  >Arizona</option>
-                            <option value="NA:US:AR"  >Arkansas</option>
-                            <option value="NA:US:CA"  >California</option>
-                            <option value="NA:US:CO"  >Colorado</option>
-                            <option value="NA:US:CT"  >Connecticut</option>
-                            <option value="NA:US:DE"  >Delaware</option>
-                            <option value="NA:US:DC"  >District of Columbia</option>
-                            <option value="NA:US:FL"  >Florida</option>
-                            <option value="NA:US:GA"  >Georgia</option>
-                            <option value="NA:US:HI"  >Hawaii</option>
-                            <option value="NA:US:ID"  >Idaho</option>
-                            <option value="NA:US:IL"  >Illinois</option>
-                            <option value="NA:US:IN"  >Indiana</option>
-                            <option value="NA:US:IA"  >Iowa</option>
-                            <option value="NA:US:KS"  >Kansas</option>
-                            <option value="NA:US:KY"  >Kentucky</option>
-                            <option value="NA:US:LA"  >Louisiana</option>
-                            <option value="NA:US:ME"  >Maine</option>
-                            <option value="NA:US:MD"  >Maryland</option>
-                            <option value="NA:US:MA"  >Massachusetts</option>
-                            <option value="NA:US:MI"  >Michigan</option>
-                            <option value="NA:US:MN"  >Minnesota</option>
-                            <option value="NA:US:MS"  >Mississippi</option>
-                            <option value="NA:US:MO"  >Missouri</option>
-                            <option value="NA:US:MT"  >Montana</option>
-                            <option value="NA:US:NE"  >Nebraska</option>
-                            <option value="NA:US:NV"  >Nevada</option>
-                            <option value="NA:US:NH"  >New Hampshire</option>
-                            <option value="NA:US:NJ"  >New Jersey</option>
-                            <option value="NA:US:NM"  >New Mexico</option>
-                            <option value="NA:US:NY"  >New York</option>
-                            <option value="NA:US:NC"  >North Carolina</option>
-                            <option value="NA:US:ND"  >North Dakota</option>
-                            <option value="NA:US:OH"  >Ohio</option>
-                            <option value="NA:US:OK"  >Oklahoma</option>
-                            <option value="NA:US:OR"  >Oregon</option>
-                            <option value="NA:US:PA"  >Pennsylvania</option>
-                            <option value="NA:US:RI"  >Rhode Island</option>
-                            <option value="NA:US:SC"  >South Carolina</option>
-                            <option value="NA:US:SD"  >South Dakota</option>
-                            <option value="NA:US:TN"  >Tennessee</option>
-                            <option value="NA:US:TX"  >Texas</option>
-                            <option value="NA:US:UT"  >Utah</option>
-                            <option value="NA:US:VT"  >Vermont</option>
-                            <option value="NA:US:VA"  >Virginia</option>
-                            <option value="NA:US:WA"  >Washington</option>
-                            <option value="NA:US:WV"  >West Virginia</option>
-                            <option value="NA:US:WI"  >Wisconsin</option>
-                            <option value="NA:US:WY"  >Wyoming</option>
-                          </select>
           </div>
-        </div>
-        <div title="Perform a search">
-          <div>
-              <input id="SearchRecruiting" value="Search" type="submit" class=""
-              tabindex="5"
-              onclick="if($('input:invalid').length==0){$('#RecruitingStudies').val('ab');showWorking();}"
-              title="Search for both recruiting studies and not yet recruiting studies using the above fields"/>
-              <!-- <input value="Search all studies" type="submit" class="searchButton searchButtonAlternate"
-                tabindex="6"
-              onclick="if($('input:invalid').length==0){showWorking();}"
-              title="Search all studies using the above fields"/> -->
-              <a href="javascript:gotoAdvSearchURL();" title="Go to the Advanced Search page" tabindex="7"
-              style="white-space:nowrap;margin-top:1ex;font-size:larger;">Advanced Search</a>
+          <div title="Other terms such as an NCT number, drug name, investigator name">
+              <label for="home-search-other-query">Additional search terms</label>
+              <span class="usa-form-hint">For example: NCT number, drug name, or investigator name</span>
+              <div>
+                  <input id="home-search-other-query" class="textInputField" name="term" maxlength="250" type="text">
+            </div>
           </div>
-        </div>
-                <input name="recrs" id="RecruitingStudies" type="hidden"/>
 
+          <div title="Country with at least one study trial location">
+            <label for="Country1">Country</label>
+            <div>
+                  <select id="Country1" class="selectInputField" name="cntry1" style="width:100%;">
+                                    <option value=""  selected="selected"  ></option>
+                                      <option value="NA:US"  >United States</option>
+                                      <option value="SS:AF"  >Afghanistan</option>
+                                      <option value="EU:AL"  >Albania</option>
+                                      <option value="AF:DZ"  >Algeria</option>
+                                      <option value="PA:AS"  >American Samoa</option>
+                                      <option value="EU:AD"  >Andorra</option>
+                                      <option value="AF:AO"  >Angola</option>
+                                      <option value="SA:AR"  >Argentina</option>
+                                      <option value="NS:AM"  >Armenia</option>
+                                      <option value="CA:AW"  >Aruba</option>
+                                      <option value="PA:AU"  >Australia</option>
+                                      <option value="EU:AT"  >Austria</option>
+                                      <option value="NS:AZ"  >Azerbaijan</option>
+                                      <option value="CA:BS"  >Bahamas</option>
+                                      <option value="ME:BH"  >Bahrain</option>
+                                      <option value="SS:BD"  >Bangladesh</option>
+                                      <option value="CA:BB"  >Barbados</option>
+                                      <option value="NS:BY"  >Belarus</option>
+                                      <option value="EU:BE"  >Belgium</option>
+                                      <option value="CA:BZ"  >Belize</option>
+                                      <option value="AF:BJ"  >Benin</option>
+                                      <option value="CA:BM"  >Bermuda</option>
+                                      <option value="SS:BT"  >Bhutan</option>
+                                      <option value="SA:BO"  >Bolivia</option>
+                                      <option value="EU:BA"  >Bosnia and Herzegovina</option>
+                                      <option value="AF:BW"  >Botswana</option>
+                                      <option value="SA:BR"  >Brazil</option>
+                                      <option value="SE:BN"  >Brunei Darussalam</option>
+                                      <option value="EU:BG"  >Bulgaria</option>
+                                      <option value="AF:BF"  >Burkina Faso</option>
+                                      <option value="AF:BI"  >Burundi</option>
+                                      <option value="SE:KH"  >Cambodia</option>
+                                      <option value="AF:CM"  >Cameroon</option>
+                                      <option value="NA:CA"  >Canada</option>
+                                      <option value="CA:KY"  >Cayman Islands</option>
+                                      <option value="AF:CF"  >Central African Republic</option>
+                                      <option value="AF:TD"  >Chad</option>
+                                      <option value="SA:CL"  >Chile</option>
+                                      <option value="ES:CN"  >China</option>
+                                      <option value="SA:CO"  >Colombia</option>
+                                      <option value="AF:CG"  >Congo</option>
+                                      <option value="AF:CD"  >Congo, The Democratic Republic of the</option>
+                                      <option value="CA:CR"  >Costa Rica</option>
+                                      <option value="EU:HR"  >Croatia</option>
+                                      <option value="CA:CU"  >Cuba</option>
+                                      <option value="ME:CY"  >Cyprus</option>
+                                      <option value="EU:CZ"  >Czech Republic</option>
+                                      <option value="AF:CI"  >C&#244;te D&apos;Ivoire</option>
+                                      <option value="EU:DK"  >Denmark</option>
+                                      <option value="AF:DJ"  >Djibouti</option>
+                                      <option value="CA:DO"  >Dominican Republic</option>
+                                      <option value="SA:EC"  >Ecuador</option>
+                                      <option value="AF:EG"  >Egypt</option>
+                                      <option value="CA:SV"  >El Salvador</option>
+                                      <option value="AF:GQ"  >Equatorial Guinea</option>
+                                      <option value="EU:EE"  >Estonia</option>
+                                      <option value="AF:ET"  >Ethiopia</option>
+                                      <option value="PA:FJ"  >Fiji</option>
+                                      <option value="EU:FI"  >Finland</option>
+                                      <option value="EU:CS"  >Former Serbia and Montenegro</option>
+                                      <option value="EU:YU"  >Former Yugoslavia</option>
+                                      <option value="EU:FR"  >France</option>
+                                      <option value="PA:PF"  >French Polynesia</option>
+                                      <option value="AF:GA"  >Gabon</option>
+                                      <option value="AF:GM"  >Gambia</option>
+                                      <option value="NS:GE"  >Georgia</option>
+                                      <option value="EU:DE"  >Germany</option>
+                                      <option value="AF:GH"  >Ghana</option>
+                                      <option value="EU:GI"  >Gibraltar</option>
+                                      <option value="EU:GR"  >Greece</option>
+                                      <option value="NA:GL"  >Greenland</option>
+                                      <option value="CA:GD"  >Grenada</option>
+                                      <option value="CA:GP"  >Guadeloupe</option>
+                                      <option value="PA:GU"  >Guam</option>
+                                      <option value="CA:GT"  >Guatemala</option>
+                                      <option value="AF:GN"  >Guinea</option>
+                                      <option value="AF:GW"  >Guinea-Bissau</option>
+                                      <option value="SA:GY"  >Guyana</option>
+                                      <option value="CA:HT"  >Haiti</option>
+                                      <option value="EU:VA"  >Holy See (Vatican City State)</option>
+                                      <option value="CA:HN"  >Honduras</option>
+                                      <option value="ES:HK"  >Hong Kong</option>
+                                      <option value="EU:HU"  >Hungary</option>
+                                      <option value="EU:IS"  >Iceland</option>
+                                      <option value="SS:IN"  >India</option>
+                                      <option value="SE:ID"  >Indonesia</option>
+                                      <option value="ME:IR"  >Iran, Islamic Republic of</option>
+                                      <option value="ME:IQ"  >Iraq</option>
+                                      <option value="EU:IE"  >Ireland</option>
+                                      <option value="ME:IL"  >Israel</option>
+                                      <option value="EU:IT"  >Italy</option>
+                                      <option value="CA:JM"  >Jamaica</option>
+                                      <option value="ES:JP"  >Japan</option>
+                                      <option value="ME:JO"  >Jordan</option>
+                                      <option value="NS:KZ"  >Kazakhstan</option>
+                                      <option value="AF:KE"  >Kenya</option>
+                                      <option value="ES:KP"  >Korea, Democratic People&apos;s Republic of</option>
+                                      <option value="ES:KR"  >Korea, Republic of</option>
+                                      <option value="ME:KW"  >Kuwait</option>
+                                      <option value="NS:KG"  >Kyrgyzstan</option>
+                                      <option value="SE:LA"  >Lao People&apos;s Democratic Republic</option>
+                                      <option value="EU:LV"  >Latvia</option>
+                                      <option value="ME:LB"  >Lebanon</option>
+                                      <option value="AF:LS"  >Lesotho</option>
+                                      <option value="AF:LR"  >Liberia</option>
+                                      <option value="AF:LY"  >Libyan Arab Jamahiriya</option>
+                                      <option value="EU:LT"  >Lithuania</option>
+                                      <option value="EU:LU"  >Luxembourg</option>
+                                      <option value="EU:MK"  >Macedonia, The Former Yugoslav Republic of</option>
+                                      <option value="AF:MG"  >Madagascar</option>
+                                      <option value="AF:MW"  >Malawi</option>
+                                      <option value="SE:MY"  >Malaysia</option>
+                                      <option value="AF:ML"  >Mali</option>
+                                      <option value="EU:MT"  >Malta</option>
+                                      <option value="CA:MQ"  >Martinique</option>
+                                      <option value="AF:MR"  >Mauritania</option>
+                                      <option value="AF:MU"  >Mauritius</option>
+                                      <option value="NA:MX"  >Mexico</option>
+                                      <option value="NS:MD"  >Moldova, Republic of</option>
+                                      <option value="EU:MC"  >Monaco</option>
+                                      <option value="ES:MN"  >Mongolia</option>
+                                      <option value="EU:ME"  >Montenegro</option>
+                                      <option value="CA:MS"  >Montserrat</option>
+                                      <option value="AF:MA"  >Morocco</option>
+                                      <option value="AF:MZ"  >Mozambique</option>
+                                      <option value="SE:MM"  >Myanmar</option>
+                                      <option value="AF:NA"  >Namibia</option>
+                                      <option value="SS:NP"  >Nepal</option>
+                                      <option value="EU:NL"  >Netherlands</option>
+                                      <option value="EU:AN"  >Netherlands Antilles</option>
+                                      <option value="PA:NC"  >New Caledonia</option>
+                                      <option value="PA:NZ"  >New Zealand</option>
+                                      <option value="CA:NI"  >Nicaragua</option>
+                                      <option value="AF:NE"  >Niger</option>
+                                      <option value="AF:NG"  >Nigeria</option>
+                                      <option value="PA:MP"  >Northern Mariana Islands</option>
+                                      <option value="EU:NO"  >Norway</option>
+                                      <option value="ME:OM"  >Oman</option>
+                                      <option value="SS:PK"  >Pakistan</option>
+                                      <option value="CA:PA"  >Panama</option>
+                                      <option value="PA:PG"  >Papua New Guinea</option>
+                                      <option value="SA:PY"  >Paraguay</option>
+                                      <option value="SA:PE"  >Peru</option>
+                                      <option value="SE:PH"  >Philippines</option>
+                                      <option value="EU:PL"  >Poland</option>
+                                      <option value="EU:PT"  >Portugal</option>
+                                      <option value="CA:PR"  >Puerto Rico</option>
+                                      <option value="ME:QA"  >Qatar</option>
+                                      <option value="EU:RO"  >Romania</option>
+                                      <option value="NS:RU"  >Russian Federation</option>
+                                      <option value="AF:RW"  >Rwanda</option>
+                                      <option value="AF:RE"  >R&#233;union</option>
+                                      <option value="CA:KN"  >Saint Kitts and Nevis</option>
+                                      <option value="ME:SA"  >Saudi Arabia</option>
+                                      <option value="AF:SN"  >Senegal</option>
+                                      <option value="EU:RS"  >Serbia</option>
+                                      <option value="AF:SC"  >Seychelles</option>
+                                      <option value="AF:SL"  >Sierra Leone</option>
+                                      <option value="SE:SG"  >Singapore</option>
+                                      <option value="EU:SK"  >Slovakia</option>
+                                      <option value="EU:SI"  >Slovenia</option>
+                                      <option value="PA:SB"  >Solomon Islands</option>
+                                      <option value="AF:ZA"  >South Africa</option>
+                                      <option value="EU:ES"  >Spain</option>
+                                      <option value="SS:LK"  >Sri Lanka</option>
+                                      <option value="AF:SD"  >Sudan</option>
+                                      <option value="SA:SR"  >Suriname</option>
+                                      <option value="AF:SZ"  >Swaziland</option>
+                                      <option value="EU:SE"  >Sweden</option>
+                                      <option value="EU:CH"  >Switzerland</option>
+                                      <option value="ME:SY"  >Syrian Arab Republic</option>
+                                      <option value="ES:TW"  >Taiwan</option>
+                                      <option value="NS:TJ"  >Tajikistan</option>
+                                      <option value="AF:TZ"  >Tanzania</option>
+                                      <option value="SE:TH"  >Thailand</option>
+                                      <option value="AF:TG"  >Togo</option>
+                                      <option value="CA:TT"  >Trinidad and Tobago</option>
+                                      <option value="AF:TN"  >Tunisia</option>
+                                      <option value="ME:TR"  >Turkey</option>
+                                      <option value="AF:UG"  >Uganda</option>
+                                      <option value="NS:UA"  >Ukraine</option>
+                                      <option value="ME:AE"  >United Arab Emirates</option>
+                                      <option value="EU:GB"  >United Kingdom</option>
+                                      <option value="NA:US"  >United States</option>
+                                      <option value="SA:UY"  >Uruguay</option>
+                                      <option value="NS:UZ"  >Uzbekistan</option>
+                                      <option value="PA:VU"  >Vanuatu</option>
+                                      <option value="SA:VE"  >Venezuela</option>
+                                      <option value="SE:VN"  >Vietnam</option>
+                                      <option value="CA:VI"  >Virgin Islands (U.S.)</option>
+                                      <option value="ME:YE"  >Yemen</option>
+                                      <option value="AF:ZM"  >Zambia</option>
+                                      <option value="AF:ZW"  >Zimbabwe</option>
+                                  </select>
+              </div>
+          </div>
+
+          <div title="State name (United States only) for a study trial location" id="StateRow" style="display:none;">
+            <label for="State1">State</label>
+            <div>
+                <select id="State1" class="selectInputField" name="state1" style="width:100%;">
+                              <option value=""  selected="selected"  ></option>
+                              <option value="NA:US:AL"  >Alabama</option>
+                              <option value="NA:US:AK"  >Alaska</option>
+                              <option value="NA:US:AZ"  >Arizona</option>
+                              <option value="NA:US:AR"  >Arkansas</option>
+                              <option value="NA:US:CA"  >California</option>
+                              <option value="NA:US:CO"  >Colorado</option>
+                              <option value="NA:US:CT"  >Connecticut</option>
+                              <option value="NA:US:DE"  >Delaware</option>
+                              <option value="NA:US:DC"  >District of Columbia</option>
+                              <option value="NA:US:FL"  >Florida</option>
+                              <option value="NA:US:GA"  >Georgia</option>
+                              <option value="NA:US:HI"  >Hawaii</option>
+                              <option value="NA:US:ID"  >Idaho</option>
+                              <option value="NA:US:IL"  >Illinois</option>
+                              <option value="NA:US:IN"  >Indiana</option>
+                              <option value="NA:US:IA"  >Iowa</option>
+                              <option value="NA:US:KS"  >Kansas</option>
+                              <option value="NA:US:KY"  >Kentucky</option>
+                              <option value="NA:US:LA"  >Louisiana</option>
+                              <option value="NA:US:ME"  >Maine</option>
+                              <option value="NA:US:MD"  >Maryland</option>
+                              <option value="NA:US:MA"  >Massachusetts</option>
+                              <option value="NA:US:MI"  >Michigan</option>
+                              <option value="NA:US:MN"  >Minnesota</option>
+                              <option value="NA:US:MS"  >Mississippi</option>
+                              <option value="NA:US:MO"  >Missouri</option>
+                              <option value="NA:US:MT"  >Montana</option>
+                              <option value="NA:US:NE"  >Nebraska</option>
+                              <option value="NA:US:NV"  >Nevada</option>
+                              <option value="NA:US:NH"  >New Hampshire</option>
+                              <option value="NA:US:NJ"  >New Jersey</option>
+                              <option value="NA:US:NM"  >New Mexico</option>
+                              <option value="NA:US:NY"  >New York</option>
+                              <option value="NA:US:NC"  >North Carolina</option>
+                              <option value="NA:US:ND"  >North Dakota</option>
+                              <option value="NA:US:OH"  >Ohio</option>
+                              <option value="NA:US:OK"  >Oklahoma</option>
+                              <option value="NA:US:OR"  >Oregon</option>
+                              <option value="NA:US:PA"  >Pennsylvania</option>
+                              <option value="NA:US:RI"  >Rhode Island</option>
+                              <option value="NA:US:SC"  >South Carolina</option>
+                              <option value="NA:US:SD"  >South Dakota</option>
+                              <option value="NA:US:TN"  >Tennessee</option>
+                              <option value="NA:US:TX"  >Texas</option>
+                              <option value="NA:US:UT"  >Utah</option>
+                              <option value="NA:US:VT"  >Vermont</option>
+                              <option value="NA:US:VA"  >Virginia</option>
+                              <option value="NA:US:WA"  >Washington</option>
+                              <option value="NA:US:WV"  >West Virginia</option>
+                              <option value="NA:US:WI"  >Wisconsin</option>
+                              <option value="NA:US:WY"  >Wyoming</option>
+                            </select>
+            </div>
+          </div>
+          <div title="Perform a search">
+            <div>
+                <input id="SearchRecruiting" value="Search" type="submit"
+                onclick="if($('input:invalid').length==0){$('#RecruitingStudies').val('ab');showWorking();}"
+                title="Search for both recruiting studies and not yet recruiting studies using the above fields"/>
+                <!-- <input value="Search all studies" type="submit" class="searchButton searchButtonAlternate"
+                  tabindex="6"
+                onclick="if($('input:invalid').length==0){showWorking();}"
+                title="Search all studies using the above fields"/> -->
+                <a href="javascript:gotoAdvSearchURL();" title="Go to the Advanced Search page"
+                style="white-space:nowrap;margin-top:1ex;font-size:larger;">Advanced Search</a>
+            </div>
+          </div>
+                  <input name="recrs" id="RecruitingStudies" type="hidden"/>
+        </div>
       </fieldset>
         </form>
 
