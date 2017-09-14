@@ -43,6 +43,10 @@ $output-bourbon-deprecation-warnings: false !default;
 #primary-box {
   margin-bottom: 3rem;
   max-width: 522px;
+
+  @media screen and (min-width: 1441px) {
+    max-width: 100%;
+  }
 }
 
 .home-main-content {
