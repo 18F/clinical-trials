@@ -216,7 +216,7 @@
       onclick="location.href=('/ct2/results'+cartToURL() + '&beta=true'); showWorking();"
       title="Show previously saved studies.">Saved Studies</button> -->
     </div>
-  <button class="savedStudiesDisabled" id="cart-disabled" type="button" disabled
+  <button class="savedStudiesDisabled usa-button-disabled" id="cart-disabled" type="button" disabled
     title="There are no saved studies to show. You can save studies to visit later from the search results page">Saved Studies (0)</button>
 </div>
 <script type="text/javascript" src="/ct2/html/ct3/js/cart.js?v=b5"></script><noscript></noscript>
@@ -311,7 +311,7 @@ class="w3-hide-small">
         </p>
       </div>
       </div>
-      <div id="primary-box" class="w3-col l7" style="padding-left:4rem;">
+      <div id="primary-box" class="w3-col l7">
       <script type="text/javascript">
 $(document).ready(function() {
       var userAgent = navigator.userAgent.toLowerCase();
@@ -355,36 +355,28 @@ $(document).ready(function() {
 
 
     <form method="get" action="/ct2/results" onsubmit="sendSearchPing();">
-      <fieldset class="w3-container" style="border-radius:8px;margin-top:6px;border:1px solid lightgrey;background-color:#f6f6f6;" title="All fields optional">
-        <legend style="background-color:white;border-radius:8px;padding:2px;font-size:larger"><span>Search <span style="font-size:x-small;">(all fields optional)</span></span></legend>
-        <div class="w3-row w3-padding-8" title="Name of a Disease  or Medical Condition. Known synonyms automatically included">
-          <div class="w3-col m3 w3-right-align small-left inputFieldLabel"><label for="home-search-condition-query"><a href="/ct2/help/conditions_instr" title="Help for Conditions search field"
-            onclick="openPopupWindow('/ct2/help/conditions_instr',1000); return false;">Condition / Disease</a>: </label>
-          </div>
-          <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
-            <input id="home-search-condition-query" class="textInputField" name="cond" tabindex="1" maxlength="250" type="text"
-              placeholder='e.g. breast cancer'>
-            <button class="clearField" type="button" title="Clear the Condition/Disease field" onclick="$('#home-search-condition-query').val('');">x</button>
+      <fieldset class="w3-container" style="margin-top:6px;border:1px solid lightgrey;background-color:#f6f6f6;" title="All fields optional">
+        <legend style="background-color:white;"><span>Find a study <span>(all fields are optional)</span></span></legend>
+        <div title="Name of a Disease  or Medical Condition. Known synonyms automatically included">
+          <label for="home-search-condition-query">Condition or disease</label>
+          <span class="usa-form-hint">For example: cancer, oxytoine, or radiation</span>
+          <div>
+            <input id="home-search-condition-query" class="textInputField" name="cond" tabindex="1" maxlength="250" type="text">
               <div style="display:none" id="home-search-condition-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
               <script type="text/javascript"> new ExtensionsMgr("home-search-condition-query","home-search-condition-ExtensionsId",null,"/ct2/rpc/extend/cond"); </script><noscript></noscript>
           </div>
         </div>
-        <div class="w3-row w3-padding-8" title="Other terms such as an NCT number, drug name, investigator name">
-            <div class="w3-col m3 w3-right-align small-left inputFieldLabel"><label for="home-search-other-query"><a href="/ct2/help/search_terms" title="Help for the Other Terms field"
-              onclick="openPopupWindow('/ct2/help/search_terms',1000); return false;">Other Terms</a>: </label>
-            </div>
-            <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
-                <input id="home-search-other-query" class="textInputField" name="term" tabindex="2" maxlength="250" type="text" style="width:100%;"
-                placeholder='e.g., NCT number, drug name, investigator name'>
-            <button class="clearField" type="button" title="Clear the Other Terms field" onclick="$('#home-search-other-query').val('');">x</button>
+        <div title="Other terms such as an NCT number, drug name, investigator name">
+            <label for="home-search-other-query">Additional search terms</label>
+            <span class="usa-form-hint">For example: NCT number, drug name, or investigator name</span>
+            <div>
+                <input id="home-search-other-query" class="textInputField" name="term" tabindex="2" maxlength="250" type="text">
           </div>
         </div>
 
-        <div class="w3-row w3-padding-8" title="Country with at least one study trial location">
-          <div class="w3-col m3 w3-right-align small-left inputFieldLabel">
-              <label for="Country1"><a href="/ct2/help/country_state" title="Help for Country search field" onclick="openPopupWindowShortWidth('/ct2/help/country_state',1000); return false;">Country</a>: </label>
-          </div>
-          <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
+        <div title="Country with at least one study trial location">
+          <label for="Country1">Country</label>
+          <div>
                 <select id="Country1" class="selectInputField" name="cntry1" tabindex="3" style="width:100%;">
                                   <option value=""  selected="selected"  ></option>
                                     <option value="NA:US"  >United States</option>
@@ -581,15 +573,12 @@ $(document).ready(function() {
                                     <option value="AF:ZM"  >Zambia</option>
                                     <option value="AF:ZW"  >Zimbabwe</option>
                                 </select>
-            <button class="clearFieldIE" type="button" title="Clear the Country field" onclick="$('#Country1').val('');$('#Country1').change();">x</button>
             </div>
         </div>
 
-        <div class="w3-row w3-padding-8" title="State name (United States only) for a study trial location" id="StateRow" style="display:none;">
-          <div class="w3-col m3 w3-right-align small-left inputFieldLabel">
-            <label for="State1"><a href="/ct2/help/country_state" title="Help for State search field" onclick="openPopupWindowShortWidth('/ct2/help/country_state',1000); return false;">State</a>: </label>
-          </div>
-          <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
+        <div title="State name (United States only) for a study trial location" id="StateRow" style="display:none;">
+          <label for="State1">State</label>
+          <div>
               <select id="State1" class="selectInputField" name="state1" tabindex="4" style="width:100%;">
                             <option value=""  selected="selected"  ></option>
                             <option value="NA:US:AL"  >Alabama</option>
@@ -644,19 +633,18 @@ $(document).ready(function() {
                             <option value="NA:US:WI"  >Wisconsin</option>
                             <option value="NA:US:WY"  >Wyoming</option>
                           </select>
-            <button class="clearFieldIE" type="button" title="Clear the State field" onclick="$('#State1').val('');$('#State1').change();">x</button>
           </div>
         </div>
-        <div class="w3-row w3-padding-8" title="Perform a search" style="margin-top:2ex;">
-          <div class="w3-col w3-center" style="padding:1.5ex 1em;">
-              <input id="SearchRecruiting" value="Find a study to participate in" type="submit" class="searchButton"
+        <div title="Perform a search">
+          <div>
+              <input id="SearchRecruiting" value="Search" type="submit" class=""
               tabindex="5"
               onclick="if($('input:invalid').length==0){$('#RecruitingStudies').val('ab');showWorking();}"
               title="Search for both recruiting studies and not yet recruiting studies using the above fields"/>
-              <input value="Search all studies" type="submit" class="searchButton searchButtonAlternate"
+              <!-- <input value="Search all studies" type="submit" class="searchButton searchButtonAlternate"
                 tabindex="6"
               onclick="if($('input:invalid').length==0){showWorking();}"
-              title="Search all studies using the above fields"/>
+              title="Search all studies using the above fields"/> -->
               <a href="javascript:gotoAdvSearchURL();" title="Go to the Advanced Search page" tabindex="7"
               style="white-space:nowrap;margin-top:1ex;font-size:larger;">Advanced Search</a>
           </div>
@@ -666,7 +654,7 @@ $(document).ready(function() {
       </fieldset>
         </form>
 
-    <div class="w3-row w3-padding-8">
+    <div>
       <div class="w3-col w3-center" id="search-extras">
       <ul>
         <li                   ><a href="/ct2/help/how-find/basic"   >Help</a></li>

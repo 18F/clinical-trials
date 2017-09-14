@@ -10,7 +10,11 @@ $output-bourbon-deprecation-warnings: false !default;
 @import 'lib/uswds/lib/neat';
 
 // // Core -------------- //
+@import 'lib/uswds/core/utilities';
 @import 'lib/uswds/core/variables';
+
+@import 'lib/uswds/elements/buttons';
+@import 'lib/uswds/elements/inputs';
 
 @import "custom-global";
 
@@ -26,6 +30,48 @@ $output-bourbon-deprecation-warnings: false !default;
   font-weight: $font-bold;
   font-size: 22px;
   max-width: 50ch;
+}
+
+// Search --------- //
+
+legend > span {
+  color: $color-base;
+  font-family: $font-serif;
+  font-size: $base-font-size;
+  font-weight: $font-bold;
+
+  > span {
+    color: #757575;
+    font-family: $font-sans;
+    font-size: 1.5rem;
+    font-weight: $font-normal;
+  }
+}
+
+label {
+  display: block;
+  line-height: 1;
+  font-weight: $font-bold;
+  font-size: $base-font-size;
+}
+
+.usa-form-hint {
+  color: #6e6e6e;
+  font-size: 1.4rem;
+}
+
+form {
+  [type=submit] {
+    margin-bottom: 1.5em;
+    margin-right: 2rem;
+    margin-top: 2.5rem;
+
+    @include media($medium-screen) {
+      padding-left: 2.7em;
+      padding-right: 2.7em;
+      width: auto;
+    }
+  }
 }
 
 // Info callouts --------- //
