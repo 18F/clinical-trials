@@ -2,8 +2,8 @@
 ---
 $output-bourbon-deprecation-warnings: false !default;
 
-// $font-path: '../uswds/fonts';
-// $image-path: '../uswds/img';
+$font-path: '../uswds/fonts';
+$image-path: '../uswds/img';
 
 // // Vendor -------------- //
 @import 'lib/uswds/lib/bourbon';
@@ -81,6 +81,11 @@ fieldset {
 [type=radio] {
   cursor: pointer;
   height: auto;
+}
+
+select {
+  -webkit-appearance: none !important;
+  line-height: initial !important;
 }
 
 // Search --------- //
