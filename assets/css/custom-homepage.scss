@@ -13,6 +13,7 @@ $image-path: '../uswds/img';
 @import 'lib/uswds/core/utilities';
 @import 'lib/uswds/core/variables';
 
+// Components -------- //
 @import 'lib/uswds/elements/buttons';
 @import 'lib/uswds/elements/inputs';
 
@@ -192,7 +193,7 @@ form {
   }
 
   [type=radio] + label {
-    @include padding(10px null 10px null);
+    @include padding(10px 5px);
     background: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, #FFFFFF 100%);
     border-bottom: 1px solid $color-gray-light;
     border-left: 1px solid $color-gray-light;

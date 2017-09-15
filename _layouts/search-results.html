@@ -369,37 +369,36 @@ class="w3-hide-small">
 
 <script type="text/javascript" src="{{ site.currenturl }}/ct2/html/ct3/js/working.js"></script><noscript></noscript>
 
-    <div id="search-results" style="width:80%;max-width:54em;margin:auto;">
+    <div id="search-results">
 
-    <form id="ResultsPageForm" method="get" action="/beta/results" onsubmit="showWorking(); return true;" style="margin:auto;margin-top:10px;">
-    <fieldset style="border-radius:8px;margin-top:6px;border:1px solid lightgrey;background-color:#f6f6f6;">
-    <legend style="background-color:white;border-radius:8px;padding:2px;text-align:left;cursor:pointer;font-size:larger;"
+    <form id="ResultsPageForm" method="get" action="/beta/results" onsubmit="showWorking(); return true;">
+    <div class="inner_wrapper">
+    <fieldset>
+    <legend class="usa-sr-only" style="background-color:white;border-radius:8px;padding:2px;text-align:left;cursor:pointer;font-size:larger;"
       onclick="ToggleParameters();"><span style="margin-right:0.5em;">Search <span style="font-size:x-small;white-space:nowrap;">(all fields optional)</span></span>
       <img id="SearchParametersImg" class="toggleImage" src="{{ site.currenturl }}/ct2/html/ct3/images/icon-collapse-trans.png" alt='Open or close the search fields display'>
      </legend>
-        <div id="parameterContents">    <div id="parameterTable" class="w3-container w3-padding-8" style="border-width:0;margin:auto;">
-                    <div class="w3-row w3-padding-8" title="Name of a Disease  or Medical Condition. Known synonyms automatically included">
-          <div class="w3-col m3 w3-right-align small-left inputFieldLabel"><label for="search-results-condition-query"><a href="/beta/help/conditions_instr" title="Help for Conditions search field" onclick="openPopupWindow('/beta/help/conditions_instr',1000); return false;">Condition / Disease</a>:</label></div>
-          <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
-            <input id="search-results-condition-query" class="textInputField" name="cond" tabindex="1"  onchange="$('input.searchButton').css('opacity', '1.0');" onkeypress="$('input.searchButton').css('opacity', '1.0');" onpaste="$('input.searchButton').css('opacity', '1.0');" oninput="$('input.searchButton').css('opacity', '1.0');"  maxlength="250" type="text" value="PTSD">
+        <div id="parameterContents">    <div id="parameterTable">
+          <div class="search_result-search-input w3-left-align" title="Name of a Disease or Medical Condition. Known synonyms automatically included">
+          <label for="home-search-condition-query">Condition or disease</label>
+          <span class="usa-form-hint">(e.g. breast cancer)</span>
+            <input id="search-results-condition-query" class="" name="cond" tabindex="1"  onchange="$('input.searchButton').css('opacity', '1.0');" onkeypress="$('input.searchButton').css('opacity', '1.0');" onpaste="$('input.searchButton').css('opacity', '1.0');" oninput="$('input.searchButton').css('opacity', '1.0');"  maxlength="250" type="text" value="PTSD">
             <button class="clearField" type="button" title="Clear the Condition/Disease field" onclick="$('#search-results-condition-query').val('');$('input.searchButton').css('opacity', '1.0');;">x</button>
                 <div style="display:none" id="search-results-condition-ExtensionsId"><ul><li>&nbsp;</li></ul></div>
                 <script type="text/javascript"> new ExtensionsMgr("search-results-condition-query","search-results-condition-ExtensionsId","/beta/rpc/extend/cond","cond"); </script><noscript></noscript>
           </div>
-          </div>
-              <div class="w3-row  w3-padding-8" title="Other terms such as an NCT number, drug name, investigator name">
-            <div class="w3-col m3 w3-right-align small-left inputFieldLabel"><label for="search-results-other-query"><a href="/beta/help/search_terms" title="Help for searching by other terms" onclick="openPopupWindow('/beta/help/search_terms',1000); return false;">Other Terms</a>:</label></div>
-            <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
+            <div class="search_result-search-input w3-left-align" title="Other terms such as an NCT number, drug name, investigator name">
+              <label for="home-search-other-query">Other terms</label>
+              <span class="usa-form-hint">(e.g. NCT number)</span>
               <input id="search-results-other-query" class="textInputField" name="term" tabindex="3"  onchange="$('input.searchButton').css('opacity', '1.0');" onkeypress="$('input.searchButton').css('opacity', '1.0');" onpaste="$('input.searchButton').css('opacity', '1.0');" oninput="$('input.searchButton').css('opacity', '1.0');"  maxlength="250" type="text" value="">
             <button class="clearField" type="button" title="Clear the Other Terms field" onclick="$('#search-results-other-query').val('');$('input.searchButton').css('opacity', '1.0');;">x</button>
           </div>
         </div>
-                                                                                    <div class="w3-row  w3-padding-8" >
-            <div class="w3-col m3 w3-right-align small-left inputFieldLabel">
-                <label for="Country1"><a href="/beta/help/country_state" title="Help for Country search field" onclick="openPopupWindowShortWidth('/beta/help/country_state',1000); return false;">Country</a>:</label>
-            </div>
-            <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
-                              <select name="cntry1" id="Country1" class="selectInputField" style="margin-right:0;"  onchange="$('input.searchButton').css('opacity', '1.0');" onkeypress="$('input.searchButton').css('opacity', '1.0');" onpaste="$('input.searchButton').css('opacity', '1.0');" oninput="$('input.searchButton').css('opacity', '1.0');"  tabindex="4">
+                                                                                    <div class="" >
+
+                            <div class="search_result-search-input w3-left-align">
+                              <label for="Country1">Country</label>
+                              <select name="cntry1" id="Country1" class="" style=""  onchange="$('input.searchButton').css('opacity', '1.0');" onkeypress="$('input.searchButton').css('opacity', '1.0');" onpaste="$('input.searchButton').css('opacity', '1.0');" oninput="$('input.searchButton').css('opacity', '1.0');"  tabindex="4">
                                       <option value=""  selected="selected"  > &nbsp;</option>
                                         <option value="NA:US"  >United States &nbsp;</option>
                                         <option value="SS:AF"  >Afghanistan &nbsp;</option>
@@ -599,14 +598,13 @@ class="w3-hide-small">
                                         <option value="AF:ZM"  >Zambia &nbsp;</option>
                                         <option value="AF:ZW"  >Zimbabwe &nbsp;</option>
                                     </select>
-              <button class="clearFieldIE" type="button" title="Clear the Country field" onclick="$('#Country1').val('');$('#Country1').change();$('input.searchButton').css('opacity', '1.0');;">x</button>
               </div>
           </div>
-          <div class="w3-row  w3-padding-8" id="State1Row" style="display:none;">
-            <div class="w3-col m3 w3-right-align small-left inputFieldLabel">
-              <label for="State1"><a href="/beta/help/country_state" title="Help for State search field" onclick="openPopupWindowShortWidth('/beta/help/country_state',1000); return false;">State</a>:</label>
+          <div class="" id="State1Row" style="display:none;">
+            <div class="search_result-search-input w3-left-align">
+              <label for="State1">State</label>
             </div>
-            <div class="w3-col m9 w3-left-align" style="display:inline-flex;padding-left:0.5em;">
+            <div class="" style="">
                             <select name="state1" id="State1" class="selectInputField"  onchange="$('input.searchButton').css('opacity', '1.0');" onkeypress="$('input.searchButton').css('opacity', '1.0');" onpaste="$('input.searchButton').css('opacity', '1.0');" oninput="$('input.searchButton').css('opacity', '1.0');"  tabindex="5">
                                 <option value=""  selected="selected"  ></option>
                                 <option value="NA:US:AL"  >Alabama</option>
@@ -661,51 +659,49 @@ class="w3-hide-small">
                                 <option value="NA:US:WI"  >Wisconsin</option>
                                 <option value="NA:US:WY"  >Wyoming</option>
                               </select>
-              <button class="clearFieldIE" type="button" title="Clear the State field" onclick="$('#State1').val('');$('#State1').change();$('input.searchButton').css('opacity', '1.0');;">x</button>
             </div>
           </div>
 
                           <div class="w3-row" style="padding-top:8px;" title="Perform Search">
-          <div class="w3-col w3-center">
-                        <input name="Search" class="searchButton" value="Search" type="submit" tabindex="6" onclick="if($('input:invalid').length==0){showWorking();}" title="Perform a new search using the above fields and all of the applied filters"/>
-                        <span style="margin-left:1.5em;white-space:nowrap;font-size:larger;">
+          <div class="">
+                        <input name="Search" class="usa-button" value="Search" type="submit" tabindex="6" onclick="if($('input:invalid').length==0){showWorking();}" title="Perform a new search using the above fields and all of the applied filters"/>
+                        <span class="form-search-advanced-button">
               <a title="Advanced Search"  tabindex="7"
                                           href="/beta/results/refine?recrs=a&amp;cond=Ptsd">
                             Advanced Search</a>
               </span>
           </div>
         </div>
-    </div>                                                                                                                <div style="margin-top:1.5ex;text-align:center;background-color: #e6e6e6;">
-      <hr style="border:1px solid #ccc;">
-      <span style="color:#1a3d85;">Applied Filters:</span>
-    <span style="white-space:nowrap;margin-left:1em;">
-    <label for="recruitingFCB" class="StudiesCB filter"><input type="checkbox" class="StudiesCB filter" id="recruitingFCB" name="recrs" form="ResultsPageForm" value="a" checked
-      onclick="$('form#ResultsPageForm').submit();" /> Recruiting </label>
-  </span>
-
-
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <hr style="border:1px solid #ccc;">
     </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div id="search-extras" style="padding-top:0.75em;text-align:center;">
-        <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div i="search-extras" style="padding-top:0.75em;text-align:center;">
+<!--         <ul>
           <li                   ><a href="/beta/help/how-find/basic"   >Help</a></li>
           <li                   ><a title="How to Use Search Results - opens new window"  href="/beta/help/how-use-search-results" onclick="openNewWindow('/beta/help/how-use-search-results'); return false"
 >How to Use Search Results</a></li>
           <li class="last-item" ><a href="/beta/about-studies/glossary"        >Glossary</a></li>
-        </ul>
-              </div>    </div>      <div id="ResultsSummary" class="results-summary" style="display:none;font-size:inherit;text-align:left;">
-      Select <img class="toggleImage" style="float:none;" onclick="ToggleParameters();" src="{{ site.currenturl }}/ct2/html/ct3/images/icon-expand-trans.png" alt='Open or close the search fields display'> to modify your search</div>
-    </fieldset>
-    </form>
-        </div>
-    </div>
+        </ul> -->
+              </div>    </div>
+        <div id="ResultsSummary" class="results-summary" style="display:none;font-size:inherit;text-align:left;">
+        Select <img class="toggleImage" style="float:none;" onclick="ToggleParameters();" src="{{ site.currenturl }}/ct2/html/ct3/images/icon-expand-trans.png" alt='Open or close the search fields display'> to modify your search</div>
+      </fieldset>
+      </div>
+      </form>
+          </div>
 
-      <div class="results-summary" style="margin-top:1ex;font-weight:bold;">221 Studies found for: </div>
-    <div class="results-summary" style="margin-top:1ex;font-weight:bold;">Recruiting Studies | Ptsd</div>
-    <p class="results-summary">Including results for <a href="javascript:void(0);">shell-shock</a>, <a href="javascript:void(0);">post traumatic stress disorder</a>, and <a href="javascript:void(0);">delayed-stress disorder</a>.</p>
+      <div class="inner_wrapper results-summary-container">
+        <div class="results-summary results-summary-count">221 studies found for: </div>
+        <span class="results-summary"><b>PTSD</b></span>
+        <span class="results-summary">(including results for <a href="javascript:void(0);">shell-shock</a>, <a href="javascript:void(0);">post traumatic stress disorder</a>, and <a href="javascript:void(0);">delayed-stress disorder</a>).</span>
+        <div class="results-summary">
+          <span class="results-summary-filter-info">Applied filters:</span>
+          <span>
+            <label for="recruitingFCB" class="StudiesCB filter inner_wrapper"><input type="checkbox" class="StudiesCB filter" id="recruitingFCB" name="recrs" form="ResultsPageForm" value="a" checked
+            onclick="$('form#ResultsPageForm').submit();" /> Recruiting </label>
+          </span>
+        </div>
+      </div>
+      </div>
       <div id="tabs">
     <ul id="tab-links">
                   <li class="current">List</li>
