@@ -139,8 +139,10 @@ $input-height: floor($input-height-exact * 10) / 10;
     @include media($medium-screen) {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      margin-bottom: 4px;
       margin-top: 19px;
       padding-bottom: 9px;
+      vertical-align: bottom;
     }
 
     &:hover,
@@ -168,6 +170,7 @@ $input-height: floor($input-height-exact * 10) / 10;
     display: inline-block;
     margin-right: -4px;
     width: 23%;
+    vertical-align: bottom;
   }
 
   .usa-form-hint {
