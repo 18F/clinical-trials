@@ -181,6 +181,67 @@ $input-height: floor($input-height-exact * 10) / 10;
   label {
     font-size: 14px;
   }
+
+  // Search --------- //
+
+  .search-legend {
+    margin-bottom: 10px;
+  }
+
+  legend {
+    font-size: $base-font-size;
+
+    > span {
+    color: $color-base;
+    font-family: $font-serif;
+    font-size: $base-font-size;
+    font-weight: $font-bold;
+
+      > span {
+        color: #757575;
+        font-family: $font-sans;
+        font-size: 1.5rem;
+        font-weight: $font-normal;
+      }
+    }
+  }
+
+  label {
+    display: block;
+    line-height: 1;
+    font-weight: $font-bold;
+  }
+
+  .form-search-home-inner {
+    @include padding(null 2rem);
+    background-color: $color-gray-lightest;
+    border: 1px solid #E4E2E0;
+    border-top: none;
+
+    label:first-child {
+      margin-top: 0;
+      padding-top: 3rem;
+    }
+
+    .usa-form-hint {
+      color: #6e6e6e; // lightest accessible gray on $color-gray-light
+      font-size: $small-font-size;
+    }
+  }
+
+  form {
+    [type=submit] {
+      // margin-bottom: 1.5em;
+      // margin-right: 2rem;
+      // margin-top: 2.5rem;
+
+      @include media($medium-screen) {
+        // padding-left: 2.7em;
+        // padding-right: 2.7em;
+        width: auto;
+      }
+    }
+  }
 }
 
 .results-summary-container {
@@ -228,7 +289,6 @@ div.results-summary {
 //   margin-top: 6px;
 // }
 
-
 // Forms
 
 fieldset {
@@ -257,68 +317,7 @@ fieldset {
   height: auto;
 }
 
-
-// Search --------- //
-
-.search-legend {
-  margin-bottom: 10px;
-}
-
-legend {
-  font-size: $base-font-size;
-
-  > span {
-  color: $color-base;
-  font-family: $font-serif;
-  font-size: $base-font-size;
-  font-weight: $font-bold;
-
-    > span {
-      color: #757575;
-      font-family: $font-sans;
-      font-size: 1.5rem;
-      font-weight: $font-normal;
-    }
-  }
-}
-
-label {
-  display: block;
-  line-height: 1;
-  font-weight: $font-bold;
-  // font-size: $base-font-size;
-}
-
-.form-search-home-inner {
-  @include padding(null 2rem);
-  background-color: $color-gray-lightest;
-  border: 1px solid #E4E2E0;
-  border-top: none;
-
-  label:first-child {
-    margin-top: 0;
-    padding-top: 3rem;
-  }
-
-  .usa-form-hint {
-    color: #6e6e6e; // lightest accessible gray on $color-gray-light
-    font-size: $small-font-size;
-  }
-}
-
-form {
-  [type=submit] {
-    // margin-bottom: 1.5em;
-    // margin-right: 2rem;
-    // margin-top: 2.5rem;
-
-    @include media($medium-screen) {
-      // padding-left: 2.7em;
-      // padding-right: 2.7em;
-      width: auto;
-    }
-  }
-}
+// Breadcrumb
 
 div#breadcrumb {
   @include grid-padding;
