@@ -139,7 +139,7 @@ $input-height: floor($input-height-exact * 10) / 10;
     @include media($medium-screen) {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       margin-top: 19px;
       padding-bottom: 9px;
       vertical-align: bottom;
@@ -168,8 +168,9 @@ $input-height: floor($input-height-exact * 10) / 10;
 .search_result-search-input {
   @include media($medium-screen) {
     display: inline-block;
-    margin-right: -4px;
+    margin-right: -1px;
     width: 23%;
+    flex: 1 0 0;
     vertical-align: bottom;
   }
 
@@ -241,6 +242,13 @@ $input-height: floor($input-height-exact * 10) / 10;
         width: auto;
       }
     }
+  }
+}
+
+#parameterTable {
+  @include media($medium-screen) {
+    display: flex;
+    align-items: flex-end;
   }
 }
 
